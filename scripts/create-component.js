@@ -20,47 +20,48 @@ fs.mkdirSync(dir)
 
 const templates = {
   "index.ts": `export * from "./${componentName}"\n`,
-  [`${componentName}.tsx`]: `import { apply, tw } from "@components/util";
+  [`${componentName}.tsx`]: `import { apply, tw } from "@components/util"
 
 const base = {
   container: apply\`flex\`,
-};
+}
 
 const colors = {
   red: "text-red-500",
   green: "text-green-500",
-};
+}
 
 type Props = {
-  children: string;
-  color?: keyof typeof colors;
-};
+  children: string
+  color?: keyof typeof colors
+  styles?: StyleOverride<keyof typeof base>
+}
 
 export const ${componentName} = ({ children, color = "red" }: Props) => {
-  return <div className={tw(base.container, colors[color])}>{children}</div>;
-};
+  return <div className={tw(base.container, colors[color])}>{children}</div>
+}
 `,
-  [`${componentName}.test.tsx`]: `import { render } from "@test";
-import { ${componentName} } from ".";
+  [`${componentName}.test.tsx`]: `import { render } from "@test"
+import { ${componentName} } from "."
 
 describe("${componentName}", () => {
   const props = {
     children: "Hello world!",
-  };
+  }
   it("renders without error", () => {
-    const { getByText } = render(<${componentName}>{props.children}</${componentName}>);
+    const { getByText } = render(<${componentName}>{props.children}</${componentName}>)
 
-    expect(getByText(props.children)).toBeInTheDocument();
-  });
-});
+    expect(getByText(props.children)).toBeInTheDocument()
+  })
+})
 `,
-  [`${componentName}.stories.tsx`]: `import { ${componentName} } from "./${componentName}";
+  [`${componentName}.stories.tsx`]: `import { ${componentName} } from "./${componentName}"
 
 export default {
   component: ${componentName},
-};
+}
 
-export const Basic = () => <${componentName}>Hello world!</${componentName}>;
+export const Basic = () => <${componentName}>Hello world!</${componentName}>
 `,
 }
 
