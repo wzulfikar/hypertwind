@@ -1,19 +1,40 @@
+import { useState } from "react"
 import { apply, tw } from "@components/util"
+import { CloseButton, Transition } from "@components/shared"
 
 const base = {
-  container: apply`flex`,
-}
-
-const colors = {
-  red: "text-red-500",
-  green: "text-green-500",
+  container: apply`flex justify-center px-4 py-3 text-white bg-indigo-600`,
+  content: apply`text-sm font-medium text-center`,
+  closeButton: "ml-auto",
 }
 
 type Props = {
-  children: string
-  color?: keyof typeof colors
+  children: React.ReactNode
+  closeable?: boolean
+  styles?: StyleOverride<keyof typeof base>
 }
 
-export const Announcement = ({ children, color = "red" }: Props) => {
-  return <div className={tw(base.container, colors[color])}>{children}</div>
+export const Announcement = ({ children, styles, closeable }: Props) => {
+  const [show, setShow] = useState(true)
+  const handleClose = () => setShow(false)
+
+  return (
+    <Transition
+      show={show}
+      onEnter="slideDown"
+      onLeave="slideUp"
+      className={tw(base.container, styles?.container)}
+    >
+      <p className={tw(base.content, styles?.content)}>{children}</p>
+
+      {closeable ? (
+        <CloseButton
+          styles={{ button: base.closeButton }}
+          onClick={handleClose}
+        />
+      ) : (
+        <></>
+      )}
+    </Transition>
+  )
 }
