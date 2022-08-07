@@ -32,7 +32,7 @@ const colors = {
 }
 
 type Props = {
-  children: string
+  children: React.ReactNode
   color?: keyof typeof colors
   styles?: StyleOverride<keyof typeof base>
 }
@@ -56,6 +56,7 @@ describe("${componentName}", () => {
 })
 `,
   [`${componentName}.stories.tsx`]: `import { ${componentName} } from "./${componentName}"
+import { tw } from "@components/util"
 
 export default {
   component: ${componentName},
