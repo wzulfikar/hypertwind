@@ -55,7 +55,7 @@ describe("${componentName}", () => {
   })
 })
 `,
-  [`${componentName}.stories.tsx`]: `import { ${componentName} } from "./${componentName}"
+  [`${componentName}.stories.tsx`]: `import { ${componentName} } from "."
 import { tw } from "@components/util"
 
 export default {

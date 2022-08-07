@@ -1,12 +1,12 @@
-import { Card } from "./Card"
 import { tw } from "@components/util"
+import { Article } from "."
 
 export default {
-  component: Card,
+  component: Article,
 }
 
 export const Basic = () => (
-  <Card
+  <Article
     href="#"
     ticker="website.com"
     title="How to position your furniture for positivity"
@@ -23,7 +23,7 @@ export const Multiple = () => {
       {Array(5)
         .fill(null)
         .map(() => (
-          <Card
+          <Article
             href="#"
             ticker="website.com"
             title="How to position your furniture for positivity"
@@ -38,7 +38,7 @@ export const Multiple = () => {
 
 export const DarkMode = () => (
   <div className="dark">
-    <Card
+    <Article
       href="#"
       ticker="website.com"
       title="How to position your furniture for positivity"

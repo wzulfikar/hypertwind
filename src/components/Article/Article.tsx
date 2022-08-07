@@ -19,7 +19,7 @@ type Props = {
   styles?: StyleOverride<keyof typeof base>
 }
 
-export const Card = ({
+export const Article = ({
   ticker,
   title,
   description,

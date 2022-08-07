@@ -1,7 +1,7 @@
 import { render } from "@test"
-import { Card } from "."
+import { Article } from "."
 
-describe("Card", () => {
+describe("Article", () => {
   const props = {
     href: "#",
     ticker: "website.com",
@@ -12,7 +12,7 @@ describe("Card", () => {
       "https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
   }
   it("renders without error", () => {
-    const { getByText } = render(<Card {...props} />)
+    const { getByText } = render(<Article {...props} />)
 
     expect(getByText(props.title)).toBeInTheDocument()
   })
