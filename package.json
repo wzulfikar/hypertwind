@@ -5,7 +5,8 @@
   "description": "",
   "scripts": {
     "test": "jest -c test/jest.config.js",
-    "start": "start-storybook -p 6006"
+    "start": "start-storybook -p 6006",
+    "create-component": "node ./scripts/create-component.js"
   },
   "dependencies": {
     "@headlessui/react": "1.6.6",
