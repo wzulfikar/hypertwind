@@ -2,7 +2,7 @@ import { Alert } from "."
 import { tw } from "@components/util"
 
 export default {
-  component: Alert
+  component: Alert,
 }
 
 export const AlertTypes = () => (
@@ -42,6 +42,7 @@ export const WithCloseButton = () => (
   <Alert
     type="success"
     text="Post has been published!"
+    closeable
     onClose={() => console.log("closed!")}
   >
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque iderat
@@ -54,6 +55,7 @@ export const WithCloseButtonAndIcon = () => (
     type="success"
     text="Post has been published!"
     icon
+    closeable
     onClose={() => console.log("closed!")}
   >
     With icon
