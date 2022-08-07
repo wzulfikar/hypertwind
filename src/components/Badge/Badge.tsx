@@ -11,10 +11,9 @@ const types: Record<string, (color: Props["color"]) => string> = {
 }
 
 type Props = {
-  children: string
+  children: React.ReactNode
   type?: keyof typeof types
   color?: keyof typeof colors
-  onClick?: () => void
   styles?: StyleOverride<keyof typeof base>
 }
 
@@ -22,14 +21,10 @@ export const Badge = ({
   children,
   type = "outline",
   color = "gray",
-  onClick,
   styles,
 }: Props) => {
   return (
-    <strong
-      onClick={onClick}
-      className={tw(base.badge, styles?.badge, types[type](color))}
-    >
+    <strong className={tw(base.badge, styles?.badge, types[type](color))}>
       {children}
     </strong>
   )

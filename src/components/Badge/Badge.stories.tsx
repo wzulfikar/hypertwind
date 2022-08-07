@@ -5,18 +5,12 @@ export default {
   component: Badge,
 }
 
-const onClick = () => console.log("clicked!")
-
 export const Simple = () => (
   <div className={tw`grid space-y-2`}>
     <div className={tw`space-x-1`}>
-      <Badge onClick={onClick}>Bug</Badge>
-      <Badge onClick={onClick} type="neon">
-        Bug
-      </Badge>
-      <Badge onClick={onClick} type="solid">
-        Bug
-      </Badge>
+      <Badge>Bug</Badge>
+      <Badge type="neon">Bug</Badge>
+      <Badge type="solid">Bug</Badge>
     </div>
   </div>
 )
@@ -24,37 +18,31 @@ export const Simple = () => (
 export const WithColor = () => (
   <div className={tw`grid space-y-2`}>
     <div className={tw`space-x-1`}>
-      <Badge onClick={onClick} color="yellow">
+      <Badge color="yellow">Bug</Badge>
+      <Badge color="yellow" type="neon">
         Bug
       </Badge>
-      <Badge onClick={onClick} color="yellow" type="neon">
-        Bug
-      </Badge>
-      <Badge onClick={onClick} color="yellow" type="solid">
+      <Badge color="yellow" type="solid">
         Bug
       </Badge>
     </div>
 
     <div className={tw`space-x-1`}>
-      <Badge onClick={onClick} color="green">
+      <Badge color="green">Bug</Badge>
+      <Badge color="green" type="neon">
         Bug
       </Badge>
-      <Badge onClick={onClick} color="green" type="neon">
-        Bug
-      </Badge>
-      <Badge onClick={onClick} color="green" type="solid">
+      <Badge color="green" type="solid">
         Bug
       </Badge>
     </div>
-    
+
     <div className={tw`space-x-1`}>
-      <Badge onClick={onClick} color="red">
+      <Badge color="red">Bug</Badge>
+      <Badge color="red" type="neon">
         Bug
       </Badge>
-      <Badge onClick={onClick} color="red" type="neon">
-        Bug
-      </Badge>
-      <Badge onClick={onClick} color="red" type="solid">
+      <Badge color="red" type="solid">
         Bug
       </Badge>
     </div>
