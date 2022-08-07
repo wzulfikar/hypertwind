@@ -1,13 +1,18 @@
-import { tw } from "@components/util"
+import { apply, tw } from "@components/util"
 import * as SvgPaths from "@components/shared/SvgPaths"
 
+const base = {
+  button: apply`opacity-90`,
+}
+
 type Props = {
+  styles?: StyleOverride<keyof typeof base>
   onClick: () => void
 }
 
-export const CloseButton = ({ onClick }: Props) => (
+export const CloseButton = ({ onClick, styles }: Props) => (
   <button
-    className={tw`opacity-90`}
+    className={tw(base.button, styles?.button)}
     aria-label="close"
     type="button"
     onClick={onClick}
