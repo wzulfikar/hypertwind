@@ -37,8 +37,8 @@ type Props = {
   styles?: StyleOverride<keyof typeof base>
 }
 
-export const ${componentName} = ({ children, color = "red" }: Props) => {
-  return <div className={tw(base.container, colors[color])}>{children}</div>
+export const ${componentName} = ({ children, color = "red", styles }: Props) => {
+  return <div className={tw(base.container, styles?.container, colors[color])}>{children}</div>
 }
 `,
   [`${componentName}.test.tsx`]: `import { render } from "@test"
