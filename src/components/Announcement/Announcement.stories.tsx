@@ -28,7 +28,7 @@ export const WithIcon = () => (
 export const WithSlider = () => {}
 
 export const WithLocation = () => (
-  <Announcement closeable location="bottom">
+  <Announcement closeable>
     Love HyperTwind? Check the{" "}
     <a className={tw`underline`} href={githubRepo}>
       Github repo!
@@ -37,7 +37,7 @@ export const WithLocation = () => (
 )
 
 export const Afloat = () => (
-  <Announcement closeable afloat>
+  <Announcement closeable>
     Love HyperTwind? Check the{" "}
     <a className={tw`underline`} href={githubRepo}>
       Github repo!
