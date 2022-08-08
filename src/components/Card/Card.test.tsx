@@ -3,11 +3,11 @@ import { Card } from "."
 
 describe("Card", () => {
   const props = {
-    children: "Hello world!",
+    title: "Hello world!",
   }
   it("renders without error", () => {
-    const { getByText } = render(<Card>{props.children}</Card>)
+    const { getByText } = render(<Card href="#" title={props.title} />)
 
-    expect(getByText(props.children)).toBeInTheDocument()
+    expect(getByText(props.title)).toBeInTheDocument()
   })
 })
