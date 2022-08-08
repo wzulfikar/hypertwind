@@ -7,7 +7,7 @@ Run locally:
 - Run storybook: `yarn start`
 
 Storybook URL:
-https://odfr39.sse.codesandbox.io
+https://wzulfikar.github.io/hypertwind
 
 Try in CodeSandbox:
 https://codesandbox.io/s/github/wzulfikar/hypertwind
