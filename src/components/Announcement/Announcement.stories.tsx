@@ -24,23 +24,3 @@ export const WithIcon = () => (
     </a>
   </Announcement>
 )
-
-export const WithSlider = () => {}
-
-export const WithLocation = () => (
-  <Announcement closeable>
-    Love HyperTwind? Check the{" "}
-    <a className={tw`underline`} href={githubRepo}>
-      Github repo!
-    </a>
-  </Announcement>
-)
-
-export const Afloat = () => (
-  <Announcement closeable>
-    Love HyperTwind? Check the{" "}
-    <a className={tw`underline`} href={githubRepo}>
-      Github repo!
-    </a>
-  </Announcement>
-)
