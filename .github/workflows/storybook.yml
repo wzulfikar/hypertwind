@@ -6,15 +6,15 @@ on:
     paths:
       - "src/components/**/*.tsx"
 jobs:
-  build-and-deploy:
+  deploy-storybook:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2.3.1
-      - name: Install and Build
-        run: |
-          npm ci
-          npm run build-storybook
+      - name: Install dependencies
+        run: yarn
+      - name: Build Storybook
+        run: yarn build-storybook
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@3.6.2
         with:
