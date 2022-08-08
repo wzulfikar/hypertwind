@@ -8,15 +8,15 @@ export default {
 const onClick = () => console.log("clicked!")
 
 export const ButtonSizes = () => (
-  <div className={tw`flex flex-col space-y-2 w-24`}>
+  <div className={tw`flex flex-col space-y-2 w-32`}>
     <Button onClick={onClick} size="sm">
-      Button sm
+      Small (sm)
     </Button>
     <Button onClick={onClick} size="md">
-      Button md
+      Medium (md)
     </Button>
     <Button onClick={onClick} size="lg">
-      Button lg
+      Large (lg)
     </Button>
   </div>
 )
