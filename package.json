@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest -c test/jest.config.js",
     "start": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
+    "set-storybook-title": "node ./scripts/set-document-title.js HyperTwind",
+    "build-storybook": "build-storybook && yarn set-storybook-title",
     "create-component": "node ./scripts/create-component.js"
   },
   "dependencies": {
