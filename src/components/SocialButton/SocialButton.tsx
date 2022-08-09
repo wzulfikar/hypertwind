@@ -66,7 +66,7 @@ type Props = {
   url: string
   platform: keyof typeof platforms
   iconLayout?: "left" | "right"
-  styles?: StyleOverride<keyof typeof base>
+  styles?: StyleOverride<typeof base>
 }
 
 export const SocialButton = ({

@@ -19,7 +19,7 @@ type Props = {
   text: string | JSX.Element
   icon?: boolean
   type?: keyof typeof types
-  styles?: StyleOverride<keyof typeof base>
+  styles?: StyleOverride<typeof base>
   children?: string | JSX.Element
   closeable?: boolean
   onClose?: () => void

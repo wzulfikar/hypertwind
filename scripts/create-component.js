@@ -34,7 +34,7 @@ const colors = {
 type Props = {
   children: React.ReactNode
   color?: keyof typeof colors
-  styles?: StyleOverride<keyof typeof base>
+  styles?: StyleOverride<typeof base>
 }
 
 export const ${componentName} = ({ children, color = "red", styles }: Props) => {

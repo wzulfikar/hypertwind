@@ -14,7 +14,7 @@ type Props = {
   children: React.ReactNode
   type?: keyof typeof types
   color?: keyof typeof colors
-  styles?: StyleOverride<keyof typeof base>
+  styles?: StyleOverride<typeof base>
 }
 
 export const Badge = ({

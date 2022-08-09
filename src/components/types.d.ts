@@ -1,5 +1,5 @@
-declare type StyleOverride<TBaseStyle extends string> = Partial<
-  Record<TBaseStyle, string>
->;
+declare type StyleOverride<TBaseStyle> = Partial<
+  Record<keyof TBaseStyle, string>
+>
 
-declare type AlertType = "info" | "success" | "warning" | "danger";
+declare type AlertType = "info" | "success" | "warning" | "danger"

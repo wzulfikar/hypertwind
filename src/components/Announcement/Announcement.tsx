@@ -11,7 +11,7 @@ const base = {
 type Props = {
   children: React.ReactNode
   closeable?: boolean
-  styles?: StyleOverride<keyof typeof base>
+  styles?: StyleOverride<typeof base>
 }
 
 export const Announcement = ({ children, styles, closeable }: Props) => {

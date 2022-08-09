@@ -6,7 +6,7 @@ const base = {
 }
 
 type Props = {
-  styles?: StyleOverride<keyof typeof base>
+  styles?: StyleOverride<typeof base>
   onClick: () => void
 }
 

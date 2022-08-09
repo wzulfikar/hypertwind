@@ -15,7 +15,7 @@ type Props = {
   children: string
   image?: string
   imageLayout?: "left" | "right"
-  styles?: StyleOverride<keyof typeof base>
+  styles?: StyleOverride<typeof base>
 }
 
 export const Pill = ({

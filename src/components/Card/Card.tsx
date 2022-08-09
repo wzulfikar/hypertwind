@@ -19,7 +19,7 @@ type Props = {
   description?: string
   type?: keyof typeof types
   svgIcon?: React.ReactNode
-  styles?: StyleOverride<keyof typeof base>
+  styles?: StyleOverride<typeof base>
 }
 
 export const Card = ({

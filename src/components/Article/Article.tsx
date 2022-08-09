@@ -16,7 +16,7 @@ type Props = {
   description: string
   image: string
   imageAlt?: string
-  styles?: StyleOverride<keyof typeof base>
+  styles?: StyleOverride<typeof base>
 }
 
 export const Article = ({
