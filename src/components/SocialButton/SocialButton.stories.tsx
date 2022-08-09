@@ -1,9 +1,8 @@
-import { SocialButton } from "."
+import { story } from "@storybook-util"
 import { tw } from "@components/util"
+import { SocialButton } from "."
 
-export default {
-  component: SocialButton,
-}
+export default story(SocialButton)
 
 export const All = () => (
   <div className={tw`grid grid-cols-2 gap-2`}>

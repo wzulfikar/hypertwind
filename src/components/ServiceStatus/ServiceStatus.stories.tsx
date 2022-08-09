@@ -1,9 +1,8 @@
-import { ServiceStatus } from "./ServiceStatus"
+import { story } from "@storybook-util"
 import { tw } from "@components/util"
+import { ServiceStatus } from "./ServiceStatus"
 
-export default {
-  component: ServiceStatus,
-}
+export default story(ServiceStatus)
 
 export const Basic = () => (
   <div className={tw`grid space-y-3 w-32`}>

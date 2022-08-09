@@ -1,10 +1,9 @@
-import { Announcement } from "./Announcement"
+import { story } from "@storybook-util"
 import { tw } from "@components/util"
 import { relativeTime, addDays } from "@util/date"
+import { Announcement } from "./Announcement"
 
-export default {
-  component: Announcement,
-}
+export default story(Announcement)
 
 const githubRepo = "https://github.com/wzulfikar/hypertwind"
 

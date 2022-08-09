@@ -1,9 +1,8 @@
 import { Alert } from "."
 import { tw } from "@components/util"
+import { story } from "@storybook-util"
 
-export default {
-  component: Alert,
-}
+export default story(Alert)
 
 export const AlertTypes = () => (
   <div className={tw`space-y-2`}>

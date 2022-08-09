@@ -1,8 +1,7 @@
+import { story } from "@storybook-util"
 import { Card } from "."
 
-export default {
-  component: Card,
-}
+export default story(Card)
 
 const icon = (
   <path

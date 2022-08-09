@@ -1,9 +1,8 @@
-import { Pill } from "./Pill"
+import { story } from "@storybook-util"
 import { tw } from "@components/util"
+import { Pill } from "./Pill"
 
-export default {
-  component: Pill,
-}
+export default story(Pill)
 
 export const Basic = () => <Pill>Hello world!</Pill>
 

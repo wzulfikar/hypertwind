@@ -1,8 +1,7 @@
+import { story } from "@storybook-util"
 import { NavBar } from "."
 
-export default {
-  component: NavBar,
-}
+export default story(NavBar)
 
 const links = [
   { label: "About", href: "#" },

@@ -1,9 +1,8 @@
+import { story } from "@storybook-util"
 import { tw } from "@components/util"
 import { Button } from "./Button"
 
-export default {
-  component: Button
-}
+export default story(Button)
 
 const onClick = () => console.log("clicked!")
 

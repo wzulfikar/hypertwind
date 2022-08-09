@@ -1,10 +1,9 @@
+import { story } from "@storybook-util"
 import { useState, useEffect } from "react"
 import { Suspense } from "."
 import { Button } from "@components"
 
-export default {
-  component: Suspense,
-}
+export default story(Suspense)
 
 const useWait = (delayMs: number, onFinish: () => void) =>
   useEffect(() => {

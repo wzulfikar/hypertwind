@@ -55,12 +55,11 @@ describe("${componentName}", () => {
   })
 })
 `,
-  [`${componentName}.stories.tsx`]: `import { ${componentName} } from "."
+  [`${componentName}.stories.tsx`]: `import { story } from "@storybook-util"
 import { tw } from "@components/util"
+import { ${componentName} } from "."
 
-export default {
-  component: ${componentName},
-}
+export default story(${componentName})
 
 export const Basic = () => <${componentName}>Hello world!</${componentName}>
 `,

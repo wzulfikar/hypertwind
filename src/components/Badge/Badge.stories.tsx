@@ -1,9 +1,8 @@
-import { Badge } from "./Badge"
+import { story } from "@storybook-util"
 import { tw } from "@components/util"
+import { Badge } from "./Badge"
 
-export default {
-  component: Badge,
-}
+export default story(Badge)
 
 export const Simple = () => (
   <div className={tw`grid space-y-2`}>
