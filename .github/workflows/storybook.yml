@@ -30,8 +30,11 @@ jobs:
       - name: Install dependencies
         run: yarn install --silent --frozen-lockfile
 
-      - name: Run Typechecking
+      - name: Run typechecking
         run: yarn tsc --noemit
+
+      - name: Run tests
+        run: yarn test
 
       - name: Build Storybook
         run: yarn build-storybook
