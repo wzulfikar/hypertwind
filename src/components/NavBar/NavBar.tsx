@@ -32,7 +32,7 @@ const NavLinks = ({ links }: Pick<Props, "links">) => (
     </h2>
     <ul className={tw(base.navLinkContainer)}>
       {links.map(({ label, href }) => (
-        <li>
+        <li key={label}>
           <a className={tw(base.navLink)} href={href}>
             {label}
           </a>
