@@ -1,4 +1,3 @@
-import React from "react"
 import { tw } from "@components/util"
 import { Transition as HeadlessTransition } from "@headlessui/react"
 
