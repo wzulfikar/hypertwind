@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react"
 import { Suspense } from "."
 import { Button } from "@components"
-import { tw } from "@components/util"
 
 export default {
   component: Suspense,
