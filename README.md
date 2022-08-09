@@ -1,8 +1,9 @@
 # HyperTwind
 
-React components built with HyperUI and Twind.
+React components based on [HyperUI](https://github.com/markmead/hyperui) built with [Twind](https://github.com/tw-in-js/twind).
 
 Run locally:
+
 - Install dependencies: `yarn`
 - Run storybook: `yarn start`
 
@@ -20,8 +21,10 @@ https://codesandbox.io/s/github/wzulfikar/hypertwind
 - I like HyperUI. It's open source and easy to understand.
 - I don't like dealing with setting up all the above everytime I start a new project. - I use [Superplate](https://github.com/pankod/superplate) to generate new project but I don't like the fact that I can't do it on my own. So this is an attempt to fix my setback.
 
-This repo reflects what I know to be reliable for my workflow.
+This repo is a reflection of what I know to be reliable for my workflow.
+
 - Typescript
 - Jest, React Testing Library
 - Storybook
-- Colocating component with stories and test (one folder per component)
+- Colocating component with stories and tests (one folder per component)
+- Common folder and utility files

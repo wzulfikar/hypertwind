@@ -4,7 +4,7 @@ import { apply, tw, ambientBox } from "@components/util"
 
 const base = {
   container: apply`p-4 border rounded max-w-xs`,
-  title: apply`flex-auto text-sm`,
+  title: apply`flex-auto text-sm font-medium`,
   description: apply`mt-1 text-xs`,
 }
 

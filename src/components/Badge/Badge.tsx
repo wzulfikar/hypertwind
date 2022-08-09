@@ -1,7 +1,7 @@
 import { apply, tw, colors } from "@components/util"
 
 const base = {
-  badge: apply`border border-current uppercase px-5 py-1.5 rounded-full text-[10px] tracking-wide cursor-pointer`,
+  badge: apply`border border-current uppercase px-5 py-1.5 rounded-full text-[10px] tracking-wide`,
 }
 
 const types: Record<string, (color: Props["color"]) => string> = {
