@@ -1,7 +1,7 @@
 import { tw, apply } from "@components/util"
 
 const base = {
-  button: apply`inline-block bg-gray-500 text-white py-1 px-2 rounded-sm`,
+  button: apply`inline-block bg-gray-500 text-white py-1 px-2 rounded`,
 }
 
 const colors = {
