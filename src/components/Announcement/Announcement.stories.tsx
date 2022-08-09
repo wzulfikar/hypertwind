@@ -1,5 +1,6 @@
 import { Announcement } from "./Announcement"
 import { tw } from "@components/util"
+import { relativeTime, addDays } from "@util/date"
 
 export default {
   component: Announcement,
@@ -16,11 +17,14 @@ export const Simple = () => (
   </Announcement>
 )
 
-export const WithIcon = () => (
-  <Announcement closeable>
-    Love HyperTwind? Check the{" "}
-    <a className={tw`underline`} href={githubRepo}>
-      Github repo!
-    </a>
-  </Announcement>
-)
+export const WithIcon = () => {
+  // const publicLaunch = dayjs().add(7, "days")
+  return (
+    <Announcement closeable>
+      Public launch is {relativeTime(addDays(7))}.{" "}
+      <a href="#" className={tw`underline`}>
+        Grab your ticket!
+      </a>
+    </Announcement>
+  )
+}
