@@ -3,9 +3,9 @@ import { apply, tw } from "@components/util"
 import { CloseButton, Transition } from "@components/shared"
 
 const base = {
-  container: apply`flex justify-center px-4 py-3 text-white bg-indigo-600`,
-  content: apply`text-sm font-medium text-center`,
-  closeButton: "ml-auto",
+  container: apply`grid grid-cols-5 px-4 py-3 text-white bg-indigo-600`,
+  content: apply`col-start-2 col-end-5 text-sm font-medium text-center`,
+  closeButton: "col-start-5 ml-auto",
 }
 
 type Props = {
