@@ -25,6 +25,9 @@
       "@components/*": [
         "src/components/*"
       ],
+      "@util/*": [
+        "src/util/*"
+      ],
       "@test": [
         "test"
       ]
