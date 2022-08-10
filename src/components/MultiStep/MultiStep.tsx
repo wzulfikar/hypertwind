@@ -7,7 +7,7 @@ import { HiCheck, HiChevronUp, HiChevronDown } from "react-icons/hi"
 const base = {
   nav: apply`flex gap-1 items-center`,
   link: apply`relative flex items-start group cursor-pointer`,
-  step: apply`relative z-10 w-8 h-8 flex items-center justify-center hidden sm:flex border-gray-300 group-hover:border-gray-400 step`,
+  step: apply`relative z-10 w-8 h-8 flex items-center justify-center hidden sm:flex border-gray-300 group-hover:border-gray-400 transition step`,
   stepLine: apply`-ml-px absolute mt-0.5 top-4 left-4 w-0.5 h-full bg-gray-300 hidden sm:flex`,
   stepContainer: apply`h-9 flex items-center`,
   stepContent: apply`ml-2 sm:ml-4 min-w-0 flex flex-col`,
@@ -158,7 +158,7 @@ export function MultiStep({ steps, accent = "indigo-600", children }: Props) {
                       >
                         <span
                           className={tw(
-                            "h-2.5 w-2.5 rounded-full group-hover:bg-gray-300",
+                            "h-2.5 w-2.5 rounded-full group-hover:bg-gray-300 transition",
                             stepIdx + 1 === currentStep
                               ? "bg-gray-300"
                               : "bg-transparent"
