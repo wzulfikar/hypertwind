@@ -6,7 +6,6 @@ describe("MultiStep", () => {
     steps: [
       {
         name: "Step 1",
-        href: "#",
         status: "todo" as const,
       },
     ],
