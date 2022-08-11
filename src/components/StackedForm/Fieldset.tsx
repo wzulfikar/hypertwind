@@ -8,12 +8,14 @@ const base = {
   inputIconSuffixContainer: apply`absolute inset-y-0 inline-flex items-center right-4`,
   inputIconSuffix: apply`w-5 h-5 text-gray-400`,
   label: apply`text-sm font-medium`,
-  fieldError: apply`text-sm text-red-600`,
+  description: apply`text-xs text-gray-500`,
+  fieldError: apply`text-xs text-red-600`,
 }
 
 export type Field = {
   name: string
   label?: string
+  description?: string
   type?: "text" | "email" | "password"
   required?: boolean
   placeholder?: string
@@ -32,6 +34,7 @@ export const Fieldset = ({
   type = "text",
   required = false,
   label: _label,
+  description,
   placeholder: _placeholder,
   Icon,
 }: FieldsetProps) => {
@@ -43,6 +46,10 @@ export const Fieldset = ({
       <label htmlFor={label} className={tw(base.label)}>
         {label}
       </label>
+
+      {description ? (
+        <p className={tw(base.description)}>{description}</p>
+      ) : null}
 
       <div className={tw(base.inputField)}>
         <input
