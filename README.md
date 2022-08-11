@@ -23,8 +23,11 @@ https://codesandbox.io/s/github/wzulfikar/hypertwind
 
 This repo is a reflection of what I know to be reliable for my workflow.
 
-- Typescript
-- Jest, React Testing Library
-- Storybook
 - Colocating component with stories and tests (one folder per component)
 - Common folder and utility files
+- [Typescript](https://www.typescriptlang.org)
+- [Jest](https://jestjs.io), [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
+- [Storybook](https://storybook.js.org)
+- [`react-hook-form`](https://react-hook-form.com) for form
+- [`zod`](https://github.com/colinhacks/zod) for validation and type safety at runtime 
+- [`react-icons`](https://react-icons.github.io) for icons
