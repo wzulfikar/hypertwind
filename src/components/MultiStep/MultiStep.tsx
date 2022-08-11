@@ -38,7 +38,7 @@ type Props = {
   accent?: string
   color?: keyof typeof colors
   styles?: StyleOverride<typeof base>
-  children?: any
+  children?: ({ step, idx }: { step: Step; idx: number }) => JSX.Element
 }
 
 export function MultiStep({ steps, accent = "indigo-600", children }: Props) {
