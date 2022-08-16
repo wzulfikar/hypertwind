@@ -13,9 +13,5 @@ type Props = {
 } & GanttProps
 
 export const GanttChart = ({ tasks, ...props }: Props) => {
-  return (
-    <div className={tw(base.container)}>
-      <Gantt tasks={tasks} {...props} />
-    </div>
-  )
+  return <Gantt tasks={tasks} {...props} />
 }
