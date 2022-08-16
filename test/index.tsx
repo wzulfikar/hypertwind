@@ -1,7 +1,7 @@
 import {
   RenderOptions,
   RenderResult,
-  render as baseRender
+  render as baseRender,
 } from "@testing-library/react"
 import rtlUserEvent from "@testing-library/user-event"
 import { ReactElement } from "react"
@@ -16,6 +16,8 @@ const render = (ui: ReactElement, options?: Omit<RenderOptions, "queries">) =>
 // re-export everything
 export * from "@testing-library/react"
 export const userEvent = rtlUserEvent
+
+export * from "./mockSvg"
 
 // override render method
 export { render }

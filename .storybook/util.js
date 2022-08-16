@@ -1,4 +1,4 @@
-const GITHUB_REPO = 'https://github.com/wzulfikar/hypertwind';
+const GITHUB_REPO = "https://github.com/wzulfikar/hypertwind"
 
 const seeInGithub = ({ component }) => {
   let path = ""
@@ -18,3 +18,8 @@ export const story = (component) => {
     },
   }
 }
+
+export const noop =
+  (name) =>
+  (...args) =>
+    console.log(name, args)
