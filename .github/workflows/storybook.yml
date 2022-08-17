@@ -5,6 +5,7 @@ on:
     branches:
       - main
     paths:
+      - "src/components/**/*.ts"
       - "src/components/**/*.tsx"
 
 jobs:
