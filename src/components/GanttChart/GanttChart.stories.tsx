@@ -3,9 +3,12 @@ import { tw } from "@components/util"
 import { GanttChart, GanttTask, ViewMode } from "."
 import "gantt-task-react/dist/index.css"
 
-export default story(GanttChart)
+const docs = `
+Renders gantt chart from [gantt-task-react](https://github.com/MaTeMaTuK/gantt-task-react).`
 
-let tasks: GanttTask[] = [
+export default story(GanttChart, docs)
+
+const tasks: GanttTask[] = [
   {
     start: new Date(2020, 1, 1),
     end: new Date(2020, 1, 2),
