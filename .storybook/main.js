@@ -1,19 +1,20 @@
-const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
+const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin")
 
 module.exports = {
   stories: ["../src/**/*.stories.tsx"],
   addons: [
     "@storybook/addon-essentials",
     "@storybook/addon-actions",
-    "@storybook/addon-console"
+    "@storybook/addon-console",
+    "storybook-addon-swc",
   ],
   core: {
-    builder: "webpack5"
+    builder: "webpack5",
   },
   webpackFinal: async (config) => {
-    if (!config.resolve.plugins) config.resolve.plugins = [];
-    config.resolve.plugins.push(new TsconfigPathsPlugin());
+    if (!config.resolve.plugins) config.resolve.plugins = []
+    config.resolve.plugins.push(new TsconfigPathsPlugin())
 
-    return config;
-  }
-};
+    return config
+  },
+}
