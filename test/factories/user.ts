@@ -1,24 +1,16 @@
-import { Factory } from 'fishery';
+import { faker } from "@faker-js/faker"
+import { Factory } from "fishery"
 
 type User = {
-  id: string;
-  name: string;
-  address: {
-    city: string;
-    state: string;
-    country: string;
-  };
-};
+  id: string
+  name: string
+  avatar: string
+}
 
-export const userFactory = Factory.define<User>(({ onCreate, sequence }) => {
-  onCreate((user) => {
-    console.log('TODO: create user in hasura', user);
-    return user;
-  });
-
+export const userFactory = Factory.define<User>(({ sequence }) => {
   return {
     id: sequence.toString(),
-    name: 'Rosa',
-    address: { city: 'Austin', state: 'TX', country: 'USA' },
-  };
-});
+    name: `${faker.name.firstName()} ${faker.name.lastName()}`,
+    avatar: faker.image.avatar(),
+  }
+})
