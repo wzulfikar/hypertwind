@@ -17,6 +17,8 @@ const render = (ui: ReactElement, options?: Omit<RenderOptions, "queries">) =>
 export * from "@testing-library/react"
 export const userEvent = rtlUserEvent
 
+export * from "./util"
+
 export * from "./mockSvg"
 
 // override render method

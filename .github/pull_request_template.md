@@ -1,5 +1,4 @@
-> 🚧 Work in progress
-
+> 🚧 **Work in progress**
 ### What
 What does this PR change, add, or delete?
 
@@ -7,7 +6,7 @@ What does this PR change, add, or delete?
 Why is this PR needed?
 
 ### Screenshots
-Add screenshot that helps the reviewer understand the context better. Remove this section if not needed.
+<!-- Add screenshot that helps the reviewer understand the context better. Remove this section if not needed. -->
 | Before | After |
 |--------|-------|
 | ![](https://via.placeholder.com/150x100.jpg?text=abc) | ![](https://via.placeholder.com/150x100.jpg?text=xyz) |
@@ -17,4 +16,4 @@ What steps can reviewer do to verify that this PR works as expected? Remove this
 
 ### Checklist
 - [ ] I have added enough test cases
-- [ ] I have self-reviewed the changes and have added explanatory comments as needed
+- [ ] I have self-reviewed the changes and added explanatory comments as needed

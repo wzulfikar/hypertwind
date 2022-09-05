@@ -1,0 +1,8 @@
+{
+  "jest.nodeEnv": {
+    "NODE_ENV": "test"
+  },
+  "jest.autoRun": {
+    "watch": false
+  }
+}
