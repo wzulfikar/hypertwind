@@ -1,5 +1,6 @@
 import { story } from "@storybook-util"
 import { tw } from "@components/util"
+import { articleFactory } from "@test/factories"
 import { Article } from "."
 
 export default story(Article)
@@ -46,3 +47,8 @@ export const DarkMode = () => (
     />
   </div>
 )
+
+export const WithFactory = () => {
+  const article = articleFactory.build()
+  return <Article href="#" {...article} ticker={article.website} />
+}
