@@ -1,3 +1,5 @@
 storybook-static
 node_modules
 tsconfig.tsbuildinfo
+.vscode/settings.json
+.vscode/launch.json
