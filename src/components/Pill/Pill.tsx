@@ -3,7 +3,7 @@ import { apply, tw } from "@components/util"
 const base = {
   container: apply`bg-gray-100 inline-flex items-center px-3 py-1.5 space-x-2 rounded-full`,
   text: apply`text-[12px] font-medium`,
-  image: apply`object-cover w-6 h-6 rounded-full`,
+  image: apply`object-cover w-6 h-6 rounded-full bg-gray-300`,
 }
 
 const imageLayouts = {
