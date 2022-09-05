@@ -1089,13 +1089,6 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@^7.17.2":
-  version "7.19.0"
-  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.19.0.tgz#22b11c037b094d27a8a2504ea4dcff00f50e2259"
-  integrity sha512-eR8Lo9hnDS7tqkO7NsV+mKvCmv5boaXFSZ70DnfhcgiEne8hv9oCEd36Klw74EtizEqLsy4YnW8UWwpBVolHZA==
-  dependencies:
-    regenerator-runtime "^0.13.4"
-
 "@babel/template@^7.12.7", "@babel/template@^7.18.10", "@babel/template@^7.18.6", "@babel/template@^7.3.3":
   version "7.18.10"
   resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.18.10.tgz#6f9134835970d1dbf0835c0d100c9f38de0c5e71"
@@ -2650,7 +2643,7 @@
   resolved "https://registry.yarnpkg.com/@swc/core-win32-x64-msvc/-/core-win32-x64-msvc-1.2.247.tgz#2e727458dac96c2f67ab58723ba6305c84c79e34"
   integrity sha512-b4SPP6nrkeUJgnjfoo32lH+Nm4mM08Q1NHX6iwaEpzTXL1KW3eWzBHevr/RKAd4E6dJhpctRmU+2ENCGoR6o6w==
 
-"@swc/core@^1.2.152", "@swc/core@^1.2.172", "@swc/core@^1.2.247":
+"@swc/core@^1.2.172", "@swc/core@^1.2.247":
   version "1.2.247"
   resolved "https://registry.yarnpkg.com/@swc/core/-/core-1.2.247.tgz#2117f533f8a14be2198567a927f498757f8515e7"
   integrity sha512-EDgTvmo20BzIzKtwcmGiDszomlLR72Zk/Bz2YAH4GXN+h4wwbSpZbDIiJss1C6Q+HsBmDjwboVdfrGG+TSyUpg==
@@ -10992,16 +10985,6 @@ store2@^2.12.0:
   resolved "https://registry.yarnpkg.com/store2/-/store2-2.14.2.tgz#56138d200f9fe5f582ad63bc2704dbc0e4a45068"
   integrity sha512-siT1RiqlfQnGqgT/YzXVUNsom9S0H1OX+dpdGN1xkyYATo4I6sep5NmsRD/40s3IIOvlCq6akxkqG82urIZW1w==
 
-storybook-addon-swc@^1.1.8:
-  version "1.1.8"
-  resolved "https://registry.yarnpkg.com/storybook-addon-swc/-/storybook-addon-swc-1.1.8.tgz#ff999d2f1360db345e7da0de19e9ff64db46ced8"
-  integrity sha512-z34Y9ugbkmpvCoXuhoXcVDKgkK8mWjnkhvXXo2n+iomE9+GFiY2KRqBsPhtuQDnpJU/aTdL1aNaBiIkLX5bB/w==
-  dependencies:
-    "@babel/runtime" "^7.17.2"
-    "@swc/core" "^1.2.152"
-    deepmerge "^4.2.2"
-    swc-loader "^0.1.15"
-
 storybook@6.5.10:
   version "6.5.10"
   resolved "https://registry.yarnpkg.com/storybook/-/storybook-6.5.10.tgz#53f736e70bf9c229fedf0db64627860fb8ebc58e"
@@ -11248,11 +11231,6 @@ supports-preserve-symlinks-flag@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz#6eda4bd344a3c94aea376d4cc31bc77311039e09"
   integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
-
-swc-loader@^0.1.15:
-  version "0.1.16"
-  resolved "https://registry.yarnpkg.com/swc-loader/-/swc-loader-0.1.16.tgz#4c718d698e518f3e6ceb9f7872c1855cdb187066"
-  integrity sha512-NKIm8aJjK/z/yfzk+v7YGwJMjBKaLaUs9ZKI2zoaIGKAjtkwjO92ZLI0fiTZuwzRqVLQl/29fBdSgFCBzquR0w==
 
 symbol-tree@^3.2.4:
   version "3.2.4"
