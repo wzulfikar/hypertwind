@@ -1,7 +1,0 @@
-{
-  "jest.autoRun": {
-    "watch": false,
-    // "onSave": "test-file"
-  },
-  "jest.jestCommandLine": "yarn test"
-}

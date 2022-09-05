@@ -8,9 +8,9 @@ import * as date from "@lib/date"
 import { fetchJson } from "@lib/fetchJson"
 
 // Expose factories as `factory.user`, `factory.event`, etc.
-const factory = {}
+const factory: Record<string, any> = {}
 for (const key in factories) {
-  factory[key.replace("Factory", "")] = factories[key]
+  factory[key.replace("Factory", "")] = (factories as any)[key]
 }
 
 // Create function to load config object. Include `app` config by default.
@@ -21,7 +21,7 @@ config.app = appConfig
 const lib = (lib: string) => import(`@lib/${lib}`)
 lib.date = date
 
-const replContext = {
+const replContext: Record<string, any> = {
   faker,
   fetch,
   fetchJson,
@@ -33,8 +33,10 @@ const replContext = {
   z,
 }
 
-;(global as any).replContext
+const globalThis: any = global
+globalThis.helper = replContext
+globalThis.helper.list = Object.keys(replContext)
 
 for (const ctx in replContext) {
-  global[ctx] = replContext[ctx]
+  globalThis[ctx] = replContext[ctx]
 }
