@@ -36,7 +36,7 @@ export const WithFactory = () => {
   return (
     <>
       <Alert text="Story Hint" styles={{ container: "mb-4 max-w-sm" }}>
-        The props for this component is created with `userFactory`. Remount the
+        The props for this component are created with `userFactory`. Remount the
         component to see new data.
       </Alert>
       <div className={tw`space-x-2`}>
