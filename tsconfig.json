@@ -25,6 +25,12 @@
       "@components/*": [
         "src/components/*"
       ],
+      "@config/*": [
+        "src/config/*"
+      ],
+      "@lib/*": [
+        "src/lib/*"
+      ],
       "@util/*": [
         "src/util/*"
       ],
@@ -33,6 +39,9 @@
       ],
       "@test": [
         "test"
+      ],
+      "@test/*": [
+        "test/*"
       ]
     },
     "incremental": true
