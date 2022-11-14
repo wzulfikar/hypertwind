@@ -1,4 +1,4 @@
-const GITHUB_REPO = "https://github.com/wzulfikar/hypertwind"
+const GITHUB_REPO = "https://github.com/wzulfikar/unwind"
 
 export const noop =
   (name) =>
