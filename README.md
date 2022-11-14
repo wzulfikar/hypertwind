@@ -31,4 +31,8 @@ This repo is a reflection of what I know to be reliable for my workflow.
 - [`zod`](https://github.com/colinhacks/zod) for validation and type safety at runtime
 - [`react-icons`](https://react-icons.github.io) for icons
 
+**TODO:**
+
+- [ ] CI: separate install deps, typecheck, and jest from deploy-storybook
+
 ---

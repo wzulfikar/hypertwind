@@ -1,5 +1,5 @@
 import { story } from "@storybook-util"
-import { Alert } from "@components/Alert"
+import { Alert } from "@components/HyperUI/Alert"
 import { tw } from "@components/util"
 import { Pill } from "./Pill"
 import { userFactory } from "@test/factories"
