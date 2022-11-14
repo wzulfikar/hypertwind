@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "target": "esnext",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -19,34 +15,16 @@
     "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
-      "@components": [
-        "src/components"
-      ],
-      "@components/*": [
-        "src/components/*"
-      ],
-      "@config/*": [
-        "src/config/*"
-      ],
-      "@lib/*": [
-        "src/lib/*"
-      ],
-      "@util/*": [
-        "src/util/*"
-      ],
-      "@storybook-util": [
-        ".storybook/util.js"
-      ],
-      "@test": [
-        "test"
-      ],
-      "@test/*": [
-        "test/*"
-      ]
+      "@components": ["src/components"],
+      "@components/*": ["src/components/*"],
+      "@config/*": ["src/config/*"],
+      "@lib/*": ["src/lib/*"],
+      "@util/*": ["src/util/*"],
+      "@storybook-util": [".storybook/util.js"],
+      "@test": ["test"],
+      "@test/*": ["test/*"]
     },
     "incremental": true
   },
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules"]
 }

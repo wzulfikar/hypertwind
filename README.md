@@ -1,4 +1,4 @@
-# HyperTwind
+# Unwind Design
 
 React components based on [HyperUI](https://github.com/markmead/hyperui) built with [Twind](https://github.com/tw-in-js/twind).
 
@@ -8,10 +8,10 @@ Run locally:
 - Run storybook: `yarn start`
 
 Storybook URL:
-https://hypertwind.dev
+https://unwind.design
 
 Try in CodeSandbox:
-https://codesandbox.io/s/github/wzulfikar/hypertwind
+https://codesandbox.io/s/github/wzulfikar/unwind
 
 ### Why?
 
@@ -28,5 +28,7 @@ This repo is a reflection of what I know to be reliable for my workflow.
 - [Jest](https://jestjs.io), [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
 - [Storybook](https://storybook.js.org)
 - [`react-hook-form`](https://react-hook-form.com) for form
-- [`zod`](https://github.com/colinhacks/zod) for validation and type safety at runtime 
+- [`zod`](https://github.com/colinhacks/zod) for validation and type safety at runtime
 - [`react-icons`](https://react-icons.github.io) for icons
+
+---

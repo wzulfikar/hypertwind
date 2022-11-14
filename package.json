@@ -1,12 +1,13 @@
 {
-  "name": "hypertwind",
+  "name": "unwind.design",
   "version": "1.0.0",
   "license": "MIT",
   "description": "",
   "scripts": {
     "test": "jest",
     "start": "start-storybook -p 6006",
-    "set-storybook-title": "node ./scripts/set-document-title.js HyperTwind",
+    "dev": "yarn start",
+    "set-storybook-title": "node ./scripts/set-document-title.js 'Unwind Design'",
     "build-storybook": "build-storybook && yarn set-storybook-title",
     "create-component": "node ./scripts/create-component.js",
     "repl": "node -r @swc-node/register -r ./scripts/init-repl.ts"
@@ -48,6 +49,7 @@
     "@types/react-dom": "18.0.6",
     "babel-jest": "28.1.3",
     "fishery": "^2.2.2",
+    "isomorphic-unfetch": "^3.1.0",
     "jest": "28.1.3",
     "jest-environment-jsdom": "28.1.3",
     "nock": "^13.2.9",
