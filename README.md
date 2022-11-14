@@ -32,7 +32,3 @@ This repo is a reflection of what I know to be reliable for my workflow.
 - [`react-icons`](https://react-icons.github.io) for icons
 
 ---
-
-notes:
-
-- pnpm not supported
