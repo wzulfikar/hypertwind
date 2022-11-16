@@ -1,4 +1,4 @@
-import "@testing-library/jest-dom/extend-expect"
+import "@testing-library/jest-dom"
 import "@components/setupTwind"
 
 window.matchMedia = jest.fn().mockImplementation((query) => {
