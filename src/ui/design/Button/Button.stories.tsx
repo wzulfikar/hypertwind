@@ -1,11 +1,7 @@
 import { ComponentStory } from "@storybook/react";
 import { story } from "@storybook-util";
 
-import { button, Button, ButtonProps } from "./button";
-
-// const Button = (props: ButtonProps) => (
-//   <button className={button(props)}>Button</button>
-// );
+import { Button } from "./Button";
 
 export default {
   ...story(Button),
@@ -14,7 +10,9 @@ export default {
   },
 };
 
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
+const Template: ComponentStory<typeof Button> = (args) => (
+  <Button {...args}>Button</Button>
+);
 
 export const Primary = Template.bind({});
 Primary.args = { intent: "primary" };

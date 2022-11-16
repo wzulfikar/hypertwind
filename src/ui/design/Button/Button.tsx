@@ -3,7 +3,10 @@ import { cva } from "class-variance-authority";
 
 type ButtonVariants = VariantProps<typeof button>;
 
-export type ButtonProps = ButtonVariants;
+export type ButtonProps = ButtonVariants & {
+  children?: JSX.Element | string;
+  onClick?: () => void;
+};
 
 export const button = cva(
   [
@@ -15,10 +18,9 @@ export const button = cva(
   {
     variants: {
       intent: {
-        neutral: "border-gray-300 bg-white text-gray-700 hover:bg-gray-50",
         secondary: "bg-indigo-100 hover:bg-indigo-200",
         primary: "bg-indigo-600 hover:bg-indigo-700",
-        accent: "bg-fuchsia-600 hover:bg-fuchsia-700",
+        accent: "bg-yellow-600 hover:bg-yellow-700",
       },
       rounded: {
         true: "rounded-full",
@@ -31,16 +33,16 @@ export const button = cva(
       },
     },
     defaultVariants: {
-      intent: "neutral",
+      intent: "primary",
       size: "md",
     },
   }
 );
 
-export const Button = ({ label, ...variants }: ButtonProps) => {
+export const Button = ({ children, onClick, ...variants }: ButtonProps) => {
   return (
-    <button type="button" className={button(variants)}>
-      {label}
+    <button type="button" className={button(variants)} onClick={onClick}>
+      {children}
     </button>
   );
 };
