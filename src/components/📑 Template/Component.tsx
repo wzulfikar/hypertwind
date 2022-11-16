@@ -7,6 +7,7 @@ export type ComponentProps = ComponentVariants & {
   onClick?: () => void;
 };
 
+// Structure of the component.
 export const Component = ({
   children,
   onClick,
@@ -19,25 +20,38 @@ export const Component = ({
   );
 };
 
+// Set default props. This will be used in cva's `defaultVariants` and Storybook's "Default".
+const defaultProps = {
+  intent: "primary",
+  size: "md",
+  rounded: false,
+} as const;
+Component.defaultProps = defaultProps;
+
+// Create variants with cva
 export const component = cva(
   [
-    "[box-shadow:0px_0px_0px_1px_rgba(127,_86,_217,_1)_inset] [box-shadow-width:1px]",
-    "px-3.5 py-2 gap-2",
-    "inline-flex justify-center items-center",
     "text-white text-left",
-    "font-semibold drop-shadow-lg overflow-clip",
-    "bg-[rgba(127,86,217,1)]",
     "text-sm leading-5 m-0",
+    "inline-flex justify-center items-center",
+    "font-semibold drop-shadow-lg overflow-clip",
+    "[box-shadow:0px_0px_0px_1px_rgba(127,_86,_217,_1)_inset] [box-shadow-width:1px]",
   ],
   {
     variants: {
+      intent: {
+        primary: ["bg-purple-600 hover:bg-purple-700 transition"],
+        danger: ["bg-red-600 hover:bg-red-700 transition"],
+      },
+      size: {
+        md: ["px-2.5 py-1 gap-1"],
+        lg: ["px-3.5 py-2 gap-2"],
+      },
       rounded: {
-        false: "rounded-lg",
-        true: "rounded-full",
+        false: ["rounded-md"],
+        true: ["rounded-full"],
       },
     },
-    defaultVariants: {
-      rounded: false,
-    },
+    defaultVariants: defaultProps,
   }
 );
