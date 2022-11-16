@@ -1,29 +1,29 @@
-import { useState } from "react"
-import { CloseButton, AlertIcon, Transition } from "@components/shared"
-import { apply, tw, ambientBox } from "@components/util"
+import { useState } from "react";
+import { CloseButton, AlertIcon, Transition } from "@components/shared";
+import { apply, tw, ambientBox } from "@components/util";
 
 const base = {
   container: apply`p-4 border rounded max-w-xs`,
-  title: apply`flex-auto text-sm font-medium`,
+  title: apply`flex-auto text-sm font-semibold`,
   description: apply`mt-1 text-xs`,
-}
+};
 
 const types: Record<AlertType, string> = {
   info: ambientBox("gray"),
   success: ambientBox("green"),
   warning: ambientBox("yellow"),
   danger: ambientBox("red"),
-}
+};
 
 type Props = {
-  text: string | JSX.Element
-  icon?: boolean
-  type?: keyof typeof types
-  styles?: StyleOverride<typeof base>
-  children?: string | JSX.Element
-  closeable?: boolean
-  onClose?: () => void
-}
+  text: string | JSX.Element;
+  icon?: boolean;
+  type?: keyof typeof types;
+  styles?: StyleOverride<typeof base>;
+  children?: string | JSX.Element;
+  closeable?: boolean;
+  onClose?: () => void;
+};
 
 export const Alert = ({
   children,
@@ -34,11 +34,11 @@ export const Alert = ({
   closeable,
   onClose,
 }: Props) => {
-  const [show, setShow] = useState(true)
+  const [show, setShow] = useState(true);
   const handleClose = () => {
-    setShow(false)
-    if (onClose) onClose()
-  }
+    setShow(false);
+    if (onClose) onClose();
+  };
 
   return (
     <Transition
@@ -58,5 +58,5 @@ export const Alert = ({
         <></>
       )}
     </Transition>
-  )
-}
+  );
+};
