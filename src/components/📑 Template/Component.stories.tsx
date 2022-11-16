@@ -16,5 +16,4 @@ const Template: ComponentStory<typeof Component> = (args) => (
   <Component {...args}>Component</Component>
 );
 
-export const Basic = Template.bind({});
-Basic.args = { rounded: false };
+export const Default = Template.bind({});
