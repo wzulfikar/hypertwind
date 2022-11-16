@@ -1,2 +1,2 @@
 export * from "./🔄 HyperUI/Alert";
-export * from "./Exploration ⛵️/Button";
+export * from "./⛵️ Exploration/Button";

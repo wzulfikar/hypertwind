@@ -17,6 +17,8 @@
     "paths": {
       "@components": ["src/components"],
       "@components/*": ["src/components/*"],
+      "@ui": ["src/ui/*"],
+      "@ui/*": ["src/ui/*"],
       "@config/*": ["src/config/*"],
       "@lib/*": ["src/lib/*"],
       "@util/*": ["src/util/*"],
