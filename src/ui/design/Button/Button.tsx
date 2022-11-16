@@ -2,10 +2,17 @@ import type { VariantProps } from "class-variance-authority";
 import { cva } from "class-variance-authority";
 
 type ButtonVariants = VariantProps<typeof button>;
-
 export type ButtonProps = ButtonVariants & {
   children?: JSX.Element | string;
   onClick?: () => void;
+};
+
+export const Button = ({ children, onClick, ...variants }: ButtonProps) => {
+  return (
+    <button type="button" className={button(variants)} onClick={onClick}>
+      {children}
+    </button>
+  );
 };
 
 export const button = cva(
@@ -38,11 +45,3 @@ export const button = cva(
     },
   }
 );
-
-export const Button = ({ children, onClick, ...variants }: ButtonProps) => {
-  return (
-    <button type="button" className={button(variants)} onClick={onClick}>
-      {children}
-    </button>
-  );
-};

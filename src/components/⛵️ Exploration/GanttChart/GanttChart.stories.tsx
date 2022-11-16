@@ -1,12 +1,12 @@
-import { story, noop } from "@storybook-util"
-import { tw } from "@components/util"
-import { GanttChart, GanttTask, ViewMode } from "."
-import "gantt-task-react/dist/index.css"
+import { story, noop } from "@storybook-util";
+import { tw } from "@components/util";
+import { GanttChart, GanttTask, ViewMode } from ".";
+import "gantt-task-react/dist/index.css";
 
 const docs = `
-Renders gantt chart from [gantt-task-react](https://github.com/MaTeMaTuK/gantt-task-react).`
+Renders gantt chart from [gantt-task-react](https://github.com/MaTeMaTuK/gantt-task-react).`;
 
-export default story(GanttChart, docs)
+export default story(GanttChart, { docs });
 
 const tasks: GanttTask[] = [
   {
@@ -59,17 +59,17 @@ const tasks: GanttTask[] = [
     isDisabled: false,
     styles: { progressColor: "#ffbb54", progressSelectedColor: "#ff9e0d" },
   },
-]
+];
 
-export const Basic = () => <GanttChart tasks={tasks} />
+export const Basic = () => <GanttChart tasks={tasks} />;
 
-export const Week = () => <GanttChart tasks={tasks} viewMode={ViewMode.Week} />
+export const Week = () => <GanttChart tasks={tasks} viewMode={ViewMode.Week} />;
 
 export const Month = () => (
   <GanttChart tasks={tasks} viewMode={ViewMode.Month} />
-)
+);
 
-export const Year = () => <GanttChart tasks={tasks} viewMode={ViewMode.Year} />
+export const Year = () => <GanttChart tasks={tasks} viewMode={ViewMode.Year} />;
 
 export const WithHandlers = () => (
   <GanttChart
@@ -81,4 +81,4 @@ export const WithHandlers = () => (
     onSelect={noop("onSelect")}
     onExpanderClick={noop("onExpanderClick")}
   />
-)
+);

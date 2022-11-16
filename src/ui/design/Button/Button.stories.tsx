@@ -4,7 +4,7 @@ import { story } from "@storybook-util";
 import { Button } from "./Button";
 
 export default {
-  ...story(Button),
+  ...story(Button, { path: "ui/design" }),
   argTypes: {
     rounded: { control: "boolean" },
   },
