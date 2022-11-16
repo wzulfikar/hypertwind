@@ -17,10 +17,10 @@ switch (process.env.RECORDER) {
 
 export const recorder = async (wrappedFn: () => Promise<void>) => {
   const { testPath, currentTestName } = expect.getState();
-  const recordingName = `recorded-${currentTestName.replace(/\s+/g, '_')}`;
+  const recordingName = `recorded-${currentTestName?.replace(/\s+/g, '_')}`;
 
   const record = setupRecorder({
-    fixturePath: path.join(testPath, '..', '__fixtures__'),
+    fixturePath: path.join(testPath!, '..', '__fixtures__'),
     mode: recorderMode as nock.BackMode,
   });
   const recording = await record(recordingName);
