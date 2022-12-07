@@ -20,7 +20,8 @@ fs.mkdirSync(dir)
 
 const templates = {
   "index.ts": `export * from "./${componentName}"\n`,
-  [`${componentName}.tsx`]: `
+  [`${componentName}.tsx`]: `import { cx } from "@twind/core"
+
 const base = {
   container: "flex",
 }
