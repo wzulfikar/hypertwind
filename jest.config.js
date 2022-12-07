@@ -9,13 +9,13 @@ module.exports = {
   rootDir: "./",
   testEnvironment: "jsdom",
   setupFilesAfterEnv: ["<rootDir>/test/setup.js"],
-  testPathIgnorePatterns: ["<rootDir>/node_modules/"],
   transform: {
     "^.+\\.(js|ts|tsx)$": [
       "@swc/jest",
       { jsc: { transform: { react: { runtime: "automatic" } } } },
     ],
   },
+  testPathIgnorePatterns: ["<rootDir>/node_modules/"],
   moduleNameMapper: {
     ...pathsToModuleNameMapper(paths, { prefix: "<rootDir>/" }),
     "\\.(scss|sass|css)$": "identity-obj-proxy",
