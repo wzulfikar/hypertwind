@@ -1,8 +1,8 @@
-import { apply, tw } from "@components/util"
+import { cx } from "@twind/core";
 
 const base = {
-  button: apply`flex justify-center items-center px-5 py-3 text-sm font-medium text-white transition-colors border-2 rounded hover:bg-transparent focus:outline-none focus:ring active:opacity-75 w-32`,
-}
+  button: `flex justify-center items-center px-5 py-3 text-sm font-medium text-white transition-colors border-2 rounded hover:bg-transparent focus:outline-none focus:ring active:opacity-75 w-32`,
+};
 
 const platforms: Record<string, Platform> = {
   github: {
@@ -54,20 +54,20 @@ const platforms: Record<string, Platform> = {
       </>
     ),
   },
-}
+};
 
 type Platform = {
-  label: string
-  style: string
-  svgPath: React.ReactNode
-}
+  label: string;
+  style: string;
+  svgPath: React.ReactNode;
+};
 
 type Props = {
-  url: string
-  platform: keyof typeof platforms
-  iconLayout?: "left" | "right"
-  styles?: StyleOverride<typeof base>
-}
+  url: string;
+  platform: keyof typeof platforms;
+  iconLayout?: "left" | "right";
+  styles?: StyleOverride<typeof base>;
+};
 
 export const SocialButton = ({
   url,
@@ -75,10 +75,10 @@ export const SocialButton = ({
   iconLayout = "left",
   styles,
 }: Props) => {
-  const { label, style, svgPath } = platforms[platform]
+  const { label, style, svgPath } = platforms[platform];
   return (
     <a
-      className={tw(
+      className={cx(
         base.button,
         style,
         iconLayout === "right" && "flex-row-reverse",
@@ -90,7 +90,7 @@ export const SocialButton = ({
       role="button"
     >
       <svg
-        className={tw`w-5 h-5`}
+        className={`w-5 h-5`}
         fill="currentColor"
         viewBox="0 0 24 24"
         aria-hidden="true"
@@ -100,5 +100,5 @@ export const SocialButton = ({
       <span>&nbsp;&nbsp;</span>
       <span>{label}</span>
     </a>
-  )
-}
+  );
+};

@@ -1,58 +1,58 @@
-import { apply, tw } from "@components/util"
+import { cx } from "@twind/core";
 
 const base = {
-  header: apply`bg-white dark:bg-gray-800`,
-  container: apply`max-w-screen-xl px-4 mx-auto sm:px-6 lg:px-8`,
-  navLinkContainer: apply`flex items-center gap-1 text-sm`,
-  navLink: apply`p-2 text-gray-600 transition hover:text-gray-400 dark:(text-gray-300 hover:text-gray-400)`,
-  authLinkContainer: apply`sm:gap-4 sm:flex`,
-  authLink: apply`px-5 py-2.5 text-sm font-medium`,
-  mobileMenu: apply`p-2 text-gray-600 transition bg-gray-100 dark:(bg-gray-700 text-gray-300) rounded hover:text-gray-400`,
-}
+  header: `bg-white dark:bg-gray-800`,
+  container: `max-w-screen-xl px-4 mx-auto sm:px-6 lg:px-8`,
+  navLinkContainer: `flex items-center gap-1 text-sm`,
+  navLink: `p-2 text-gray-600 transition hover:text-gray-400 dark:(text-gray-300 hover:text-gray-400)`,
+  authLinkContainer: `sm:gap-4 sm:flex`,
+  authLink: `px-5 py-2.5 text-sm font-medium`,
+  mobileMenu: `p-2 text-gray-600 transition bg-gray-100 dark:(bg-gray-700 text-gray-300) rounded hover:text-gray-400`,
+};
 
 type NavLink = {
-  href: string
-  label: string
-}
+  href: string;
+  label: string;
+};
 
 type Props = {
-  links: NavLink[]
+  links: NavLink[];
   authLinks?: {
-    login: NavLink
-    register: NavLink
-  }
-  logo: JSX.Element
-  styles?: StyleOverride<typeof base>
-}
+    login: NavLink;
+    register: NavLink;
+  };
+  logo: JSX.Element;
+  styles?: StyleOverride<typeof base>;
+};
 
 const NavLinks = ({ links }: Pick<Props, "links">) => (
-  <nav className={tw("hidden md:block")} aria-labelledby="header-navigation">
-    <h2 className={tw("sr-only")} id="header-navigation">
+  <nav className={"hidden md:block"} aria-labelledby="header-navigation">
+    <h2 className={"sr-only"} id="header-navigation">
       Header navigation
     </h2>
-    <ul className={tw(base.navLinkContainer)}>
+    <ul className={base.navLinkContainer}>
       {links.map(({ label, href }) => (
         <li key={label}>
-          <a className={tw(base.navLink)} href={href}>
+          <a className={base.navLink} href={href}>
             {label}
           </a>
         </li>
       ))}
     </ul>
   </nav>
-)
+);
 
 const AuthLinks = ({ login, register }: NonNullable<Props["authLinks"]>) => (
-  <div className={tw(base.authLinkContainer)}>
+  <div className={base.authLinkContainer}>
     <a
-      className={tw(base.authLink, "text-white bg-gray-700 rounded-md shadow")}
+      className={cx(base.authLink, "text-white bg-gray-700 rounded-md shadow")}
       href={login.href}
     >
       {login.label}
     </a>
-    <div className={tw("hidden sm:flex")}>
+    <div className={"hidden sm:flex"}>
       <a
-        className={tw(
+        className={cx(
           base.authLink,
           "text-gray-700 bg-gray-100 dark:(bg-gray-700 text-gray-200) rounded-md"
         )}
@@ -62,13 +62,13 @@ const AuthLinks = ({ login, register }: NonNullable<Props["authLinks"]>) => (
       </a>
     </div>
   </div>
-)
+);
 
 const MobileMenu = () => (
-  <button className={tw(base.mobileMenu)}>
+  <button className={base.mobileMenu}>
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className={tw("w-5 h-5")}
+      className={"w-5 h-5"}
       fill="none"
       viewBox="0 0 24 24"
       stroke="currentColor"
@@ -81,21 +81,18 @@ const MobileMenu = () => (
       />
     </svg>
   </button>
-)
+);
 
 export const NavBar = ({ logo, links, authLinks }: Props) => {
   return (
-    <header className={tw(base.header)}>
-      <div className={tw(base.container)}>
-        <div className={tw("flex items-center justify-between h-16")}>
-          <div className={tw("flex-1 md:flex md:items-center md:gap-12")}>
-            <a
-              className={tw("block text-gray-700 dark:text-gray-200")}
-              href="/"
-            >
-              <span className={tw("sr-only")}>Home</span>
+    <header className={base.header}>
+      <div className={base.container}>
+        <div className={"flex items-center justify-between h-16"}>
+          <div className={"flex-1 md:flex md:items-center md:gap-12"}>
+            <a className={"block text-gray-700 dark:text-gray-200"} href="/">
+              <span className={"sr-only"}>Home</span>
               <svg
-                className={tw("h-8")}
+                className={"h-8"}
                 viewBox="0 0 28 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -105,12 +102,12 @@ export const NavBar = ({ logo, links, authLinks }: Props) => {
             </a>
           </div>
 
-          <div className={tw("md:flex md:items-center md:gap-12")}>
+          <div className={"md:flex md:items-center md:gap-12"}>
             <NavLinks links={links} />
 
-            <div className={tw("flex items-center gap-4")}>
+            <div className={"flex items-center gap-4"}>
               {authLinks ? <AuthLinks {...authLinks} /> : <></>}
-              <div className={tw("block md:hidden")}>
+              <div className={"block md:hidden"}>
                 <MobileMenu />
               </div>
             </div>
@@ -118,5 +115,5 @@ export const NavBar = ({ logo, links, authLinks }: Props) => {
         </div>
       </div>
     </header>
-  )
-}
+  );
+};

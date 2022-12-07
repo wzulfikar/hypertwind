@@ -1,5 +1,4 @@
 import { story } from "@storybook-util";
-import { tw } from "@components/util";
 import { Callout } from "@ui/interface";
 import { Spacer } from "@ui/layout";
 import { userFactory } from "@test/factories";
@@ -11,7 +10,7 @@ export default story(Pill);
 export const Basic = () => <Pill>Hello world!</Pill>;
 
 export const WithImage = () => (
-  <div className={tw`grid w-max space-y-2`}>
+  <div className={`grid w-max space-y-2`}>
     <Pill image="https://faces-img.xcdn.link/thumb-lorem-face-2609_thumb.jpg">
       John Smith
     </Pill>
@@ -42,7 +41,7 @@ export const WithFactory = () => {
         component to see new data.
       </Callout>
       <Spacer size="h-3" />
-      <div className={tw`space-x-2`}>
+      <div className={`space-x-2`}>
         <Pill image={user1.avatar}>{user1.name}</Pill>
         <Pill image={user2.avatar}>{user2.name}</Pill>
         <Pill image={user3.avatar} imageLayout="right">

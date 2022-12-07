@@ -1,7 +1,9 @@
 import "@storybook/addon-actions/register";
-import "@components/setupTwind";
 import { addDecorator } from "@storybook/react";
 import { withConsole } from "@storybook/addon-console";
+
+// Install twind
+require("@twind/core").install(require('../twind.config'))
 
 addDecorator((storyFn, context) => withConsole()(storyFn)(context));
 

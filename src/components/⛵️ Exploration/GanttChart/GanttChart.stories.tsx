@@ -1,5 +1,4 @@
 import { story, noop } from "@storybook-util";
-import { tw } from "@components/util";
 import { GanttChart, GanttTask, ViewMode } from ".";
 import "gantt-task-react/dist/index.css";
 

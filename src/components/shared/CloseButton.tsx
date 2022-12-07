@@ -1,24 +1,24 @@
-import { apply, tw } from "@components/util"
-import * as SvgPaths from "@components/shared/SvgPaths"
+import * as SvgPaths from "@components/shared/SvgPaths";
+import { cx } from "@twind/core";
 
 const base = {
-  button: apply`opacity-90`,
-}
+  button: `opacity-90`,
+};
 
 type Props = {
-  styles?: StyleOverride<typeof base>
-  onClick: () => void
-}
+  styles?: StyleOverride<typeof base>;
+  onClick: () => void;
+};
 
 export const CloseButton = ({ onClick, styles }: Props) => (
   <button
-    className={tw(base.button, styles?.button)}
+    className={cx(base.button, styles?.button)}
     aria-label="close"
     type="button"
     onClick={onClick}
   >
     <svg
-      className={tw`w-4 h-4`}
+      className={`w-4 h-4`}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 20 20"
       fill="currentColor"
@@ -26,4 +26,4 @@ export const CloseButton = ({ onClick, styles }: Props) => (
       {SvgPaths.x}
     </svg>
   </button>
-)
+);

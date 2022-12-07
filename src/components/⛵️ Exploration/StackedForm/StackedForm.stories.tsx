@@ -1,9 +1,8 @@
-import { story } from "@storybook-util"
-import { HiEye, HiAtSymbol } from "react-icons/hi"
-import { tw } from "@components/util"
-import { StackedForm } from "."
+import { story } from "@storybook-util";
+import { HiEye, HiAtSymbol } from "react-icons/hi";
+import { StackedForm } from ".";
 
-export default story(StackedForm)
+export default story(StackedForm);
 
 const fields = [
   {
@@ -16,7 +15,7 @@ const fields = [
   },
   { name: "password", type: "password" as const, Icon: HiEye, required: true },
   { name: "phone" },
-]
+];
 
 export const Basic = () => (
   <StackedForm
@@ -27,18 +26,18 @@ export const Basic = () => (
   >
     <button
       type="submit"
-      className={tw(
+      className={
         "block w-full px-5 py-3 text-sm font-medium text-white bg-indigo-600 rounded-lg"
-      )}
+      }
     >
       Sign in
     </button>
 
-    <p className={tw("text-sm text-center text-gray-500")}>
+    <p className={"text-sm text-center text-gray-500"}>
       No account?
-      <a className={tw("underline")} href="">
+      <a className={"underline"} href="">
         Sign up
       </a>
     </p>
   </StackedForm>
-)
+);

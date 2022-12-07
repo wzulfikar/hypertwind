@@ -20,7 +20,10 @@ specifiers:
   '@tiptap/extension-character-count': ^2.0.0-beta.31
   '@tiptap/react': ^2.0.0-beta.114
   '@tiptap/starter-kit': ^2.0.0-beta.191
+  '@twind/core': ^1.0.1
   '@twind/forms': ^0.1.4
+  '@twind/preset-autoprefix': ^1.0.1
+  '@twind/preset-tailwind': ^1.0.1
   '@twind/typography': ^0.0.2
   '@types/jest': ^29.2.2
   '@types/react': 18.0.15
@@ -45,7 +48,6 @@ specifiers:
   ts-jest: 28.0.7
   tsconfig-paths: ^4.1.0
   tsconfig-paths-webpack-plugin: 4.0.0
-  twind: 0.16.17
   typescript: 4.7.4
   zod: ^3.18.0
 
@@ -54,8 +56,11 @@ dependencies:
   '@tiptap/extension-character-count': 2.0.0-beta.31
   '@tiptap/react': 2.0.0-beta.114_biqbaboplfbrettd7655fr4n2y
   '@tiptap/starter-kit': 2.0.0-beta.191
-  '@twind/forms': 0.1.4_ec74xkl7ldklxgjcg776zfoxcm
-  '@twind/typography': 0.0.2_ec74xkl7ldklxgjcg776zfoxcm
+  '@twind/core': 1.0.1_typescript@4.7.4
+  '@twind/forms': 0.1.4_typescript@4.7.4
+  '@twind/preset-autoprefix': 1.0.1_xxnsjm5yl6nod3pjzwnerjadou
+  '@twind/preset-tailwind': 1.0.1_xxnsjm5yl6nod3pjzwnerjadou
+  '@twind/typography': 0.0.2_typescript@4.7.4
   class-variance-authority: 0.3.0_typescript@4.7.4
   date-fns: 2.29.1
   gantt-task-react: 0.3.9_react@18.2.0
@@ -65,7 +70,6 @@ dependencies:
   react-icons: 4.4.0_react@18.2.0
   react-script-hook: 1.7.2_biqbaboplfbrettd7655fr4n2y
   storybook: 6.5.10_xrxvbtylmve4l2tr3vmmqgfp7q
-  twind: 0.16.17_typescript@4.7.4
   zod: 3.18.0
 
 devDependencies:
@@ -4536,6 +4540,12 @@ packages:
       '@swc/core-win32-x64-msvc': 1.2.247
     dev: true
 
+  /@swc/helpers/0.4.14:
+    resolution: {integrity: sha512-4C7nX/dvpzB7za4Ql9K81xK3HPxCpHMgwTZVyf+9JQ6VUbn9jjZVN7/Nkdz/Ugzs2CSjqnL/UPXroiVBVHUWUw==}
+    dependencies:
+      tslib: 2.4.0
+    dev: false
+
   /@swc/jest/0.2.22_@swc+core@1.2.247:
     resolution: {integrity: sha512-PIUIk9IdB1oAVfF9zNIfYoMBoEhahrrSvyryFANas7swC1cF0L5HR0f9X4qfet46oyCHCBtNcSpN0XJEOFIKlw==}
     engines: {npm: '>= 7.0.0'}
@@ -4850,7 +4860,21 @@ packages:
     engines: {node: '>= 10'}
     dev: true
 
-  /@twind/forms/0.1.4_ec74xkl7ldklxgjcg776zfoxcm:
+  /@twind/core/1.0.1_typescript@4.7.4:
+    resolution: {integrity: sha512-cSiDmTqSZ3HYqhbUhb9r//EiYvdfzteU9qbIPeBCIUkNg3ZUol4vOYNxBH5ymmderF4pvQ+Btf6d+flpVm0U9g==}
+    engines: {node: '>=14.15.0'}
+    peerDependencies:
+      typescript: ^4.8.4
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      '@swc/helpers': 0.4.14
+      csstype: 3.1.1
+      typescript: 4.7.4
+    dev: false
+
+  /@twind/forms/0.1.4_typescript@4.7.4:
     resolution: {integrity: sha512-OwI3xd0NTDlQo2M9L3NDVnngBU/mGgHaIAif91taGfiN4zpbwvYLSpUFIeBlcD8XeGvdFQv07T5hxavFRsKa7Q==}
     engines: {node: '>=10.13'}
     peerDependencies:
@@ -4860,11 +4884,40 @@ packages:
       typescript:
         optional: true
     dependencies:
-      twind: 0.16.17_typescript@4.7.4
       typescript: 4.7.4
     dev: false
 
-  /@twind/typography/0.0.2_ec74xkl7ldklxgjcg776zfoxcm:
+  /@twind/preset-autoprefix/1.0.1_xxnsjm5yl6nod3pjzwnerjadou:
+    resolution: {integrity: sha512-UL/09ZjK+lw07i12czrQZgQTznNnfsLZXlRjfxx9Tl76O7uv2Z41Ws2jl6/ONbwbtcC9t+xslZWm/i4KbfaD+w==}
+    engines: {node: '>=14.15.0'}
+    peerDependencies:
+      '@twind/core': ^1.0.1
+      typescript: ^4.8.4
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      '@twind/core': 1.0.1_typescript@4.7.4
+      style-vendorizer: 2.2.3
+      typescript: 4.7.4
+    dev: false
+
+  /@twind/preset-tailwind/1.0.1_xxnsjm5yl6nod3pjzwnerjadou:
+    resolution: {integrity: sha512-anUOpxjvKFvxi4jP3u0HgP1+GtnqMFR7bZOUUc8+M099zIyLaRtBWw/8CCn+QN1WY/eZ01e7ru8GlYPUpJEQxA==}
+    engines: {node: '>=14.15.0'}
+    peerDependencies:
+      '@twind/core': ^1.0.1
+      typescript: ^4.8.4
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      '@swc/helpers': 0.4.14
+      '@twind/core': 1.0.1_typescript@4.7.4
+      typescript: 4.7.4
+    dev: false
+
+  /@twind/typography/0.0.2_typescript@4.7.4:
     resolution: {integrity: sha512-UKFNX+JRB+ODnJ6jr7coDl5WC6tQAXXzEJXyc5kXQot0wOy1X5gw8QjunHz9omb+QHmVo/gf8ofLueZl1lIdSA==}
     peerDependencies:
       twind: '>=0.14.4'
@@ -4873,7 +4926,6 @@ packages:
       typescript:
         optional: true
     dependencies:
-      twind: 0.16.17_typescript@4.7.4
       typescript: 4.7.4
     dev: false
 
@@ -5087,7 +5139,7 @@ packages:
     dependencies:
       '@types/prop-types': 15.7.5
       '@types/scheduler': 0.16.2
-      csstype: 3.1.0
+      csstype: 3.1.1
     dev: true
 
   /@types/responselike/1.0.0:
@@ -7046,6 +7098,10 @@ packages:
 
   /csstype/3.1.0:
     resolution: {integrity: sha512-uX1KG+x9h5hIJsaKR9xHUeUraxf8IODOwq9JLNPq6BwB04a/xgpq3rcx47l5BZu5zBPlgD342tdke3Hom/nJRA==}
+    dev: true
+
+  /csstype/3.1.1:
+    resolution: {integrity: sha512-DJR/VvkAvSZW9bTouZue2sSxDwdTN92uHjqeKVm+0dAqdfNykRzQ95tay8aXMBAAPpUiq4Qcug2L7neoRh2Egw==}
 
   /currently-unhandled/0.4.1:
     resolution: {integrity: sha512-/fITjgjGU50vjQ4FH6eUoYu+iUoUKIXws2hL15JJpIR+BbTxaXQsMuuyjtNh2WqsSBS5nsaZHFsFecyw5CCAng==}
@@ -7301,6 +7357,7 @@ packages:
       domelementtype: 2.3.0
       domhandler: 4.3.1
       entities: 2.2.0
+    dev: true
 
   /dom-walk/0.1.2:
     resolution: {integrity: sha512-6QvTW9mrGeIegrFXdtQi9pk7O/nSK6lSdXW2eqUspN5LWD7UTji2Fqw5V2YLjBpHEoU9Xl/eUWNpDeZvoyOv2w==}
@@ -7311,6 +7368,7 @@ packages:
 
   /domelementtype/2.3.0:
     resolution: {integrity: sha512-OLETBj6w0OsagBwdXnPdN0cnMfF9opN69co+7ZrbfPGrdpPVNBUj02spi6B1N7wChLQiPn4CSH/zJvXw56gmHw==}
+    dev: true
 
   /domexception/4.0.0:
     resolution: {integrity: sha512-A2is4PLG+eeSfoTMA95/s4pvAoSo2mKtiM5jlHkAVewmiO8ISFTFKZjH7UAM1Atli/OT/7JHOrJRJiMKUZKYBw==}
@@ -7324,6 +7382,7 @@ packages:
     engines: {node: '>= 4'}
     dependencies:
       domelementtype: 2.3.0
+    dev: true
 
   /domutils/2.8.0:
     resolution: {integrity: sha512-w96Cjofp72M5IIhpjgobBimYEfoPjx1Vx0BSX9P30WBdZW2WIKU0T1Bd0kz2eNZ9ikjKgHbEyKx8BB6H1L3h3A==}
@@ -7331,6 +7390,7 @@ packages:
       dom-serializer: 1.4.1
       domelementtype: 2.3.0
       domhandler: 4.3.1
+    dev: true
 
   /dot-case/3.0.4:
     resolution: {integrity: sha512-Kv5nKlh6yRrdrGvxeJ2e5y2eRUpkUosIW4A2AS38zwSz27zu7ufDwQPi5Jhs3XAlGNetl3bmnGhQsMtkKJnj3w==}
@@ -7429,6 +7489,7 @@ packages:
 
   /entities/2.2.0:
     resolution: {integrity: sha512-p92if5Nz619I0w+akJrLZH0MX0Pb5DX39XOwQTtXSdQQOaYH03S1uIQp4mhOZtAXrxq4ViO67YTiLBo2638o9A==}
+    dev: true
 
   /envinfo/7.8.1:
     resolution: {integrity: sha512-/o+BXHmB7ocbHEAs6F2EnG0ogybVVUdkRunTT2glZU9XAaGmhqskrvKwqXuDfNjEO0LZKWdejEEpnq8aM0tOaw==}
@@ -8636,6 +8697,7 @@ packages:
       domhandler: 4.3.1
       domutils: 2.8.0
       entities: 2.2.0
+    dev: true
 
   /http-cache-semantics/4.1.0:
     resolution: {integrity: sha512-carPklcUh7ROWRK7Cv27RPtdhYhUsela/ue5/jKzjegVvXDqM2ILE9Q2BGn9JZJh1g87cp56su/FgQSzcWS8cQ==}
@@ -13223,21 +13285,6 @@ packages:
 
   /tty-browserify/0.0.0:
     resolution: {integrity: sha512-JVa5ijo+j/sOoHGjw0sxw734b1LhBkQ3bvUGNdxnVXDCX81Yx7TFgnZygxrIIWn23hbfTaMYLwRmAxFyDuFmIw==}
-
-  /twind/0.16.17_typescript@4.7.4:
-    resolution: {integrity: sha512-dBKm8+ncJcIALiqBRLxA/krFEwUSjnzR+N73eKgqPtVPJqfLpkajWwKWL5xEpEQ5ypS3ffa0jJjH3/eIeuA3pw==}
-    engines: {node: '>=10.13'}
-    peerDependencies:
-      typescript: ^4.1.0
-    peerDependenciesMeta:
-      typescript:
-        optional: true
-    dependencies:
-      csstype: 3.1.0
-      htmlparser2: 6.1.0
-      style-vendorizer: 2.2.3
-      typescript: 4.7.4
-    dev: false
 
   /type-check/0.3.2:
     resolution: {integrity: sha512-ZCmOJdvOWDBYJlzAoFkC+Q0+bUyEOS1ltgp1MGU03fqHG+dbi9tBFU2Rd9QKiDZFAYrhPh2JUf7rZRIuHRKtOg==}
