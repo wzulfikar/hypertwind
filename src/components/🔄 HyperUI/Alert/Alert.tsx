@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { CloseButton, AlertIcon, Transition } from "@components/shared";
-import { apply, tw, ambientBox } from "@components/util";
+import { ambientBox } from "@components/util";
+import { cx } from "@twind/core";
 
 const base = {
-  container: apply`p-4 border rounded max-w-xs`,
-  title: apply`flex-auto text-sm font-semibold`,
-  description: apply`mt-1 text-xs`,
+  container: `p-4 border rounded max-w-xs`,
+  title: `flex-auto text-sm font-semibold`,
+  description: `mt-1 text-xs`,
 };
 
 const types: Record<AlertType, string> = {
@@ -44,19 +45,15 @@ export const Alert = ({
     <Transition
       show={show}
       role="alert"
-      className={tw(base.container, styles?.container, types[type])}
+      className={cx(base.container, styles?.container, types[type])}
     >
-      <div className={tw`flex space-x-1.5`}>
+      <div className={`flex space-x-1.5`}>
         {icon ? <AlertIcon type={type} /> : null}
-        <strong className={tw(base.title, styles?.title)}>{text}</strong>
+        <strong className={cx(base.title, styles?.title)}>{text}</strong>
         {closeable ? <CloseButton onClick={handleClose} /> : null}
       </div>
 
-      {children ? (
-        <div className={tw(base.description)}>{children}</div>
-      ) : (
-        <></>
-      )}
+      {children ? <div className={base.description}>{children}</div> : <></>}
     </Transition>
   );
 };

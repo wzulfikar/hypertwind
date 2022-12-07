@@ -1,24 +1,23 @@
-import { Editor } from "@tiptap/react"
-import { apply, tw } from "twind"
-import { css } from "twind/css"
+import { Editor } from "@tiptap/react";
+import { css, cx } from "@twind/core";
 
 const base = {
-  container: apply`inline-flex gap-1`,
-}
+  container: `inline-flex gap-1`,
+};
 
 const style = css({
-  button: apply`bg-black text-white p-2`,
-})
+  button: `bg-black text-white p-2`,
+});
 
 type Props = {
-  editor: Editor | null
-}
+  editor: Editor | null;
+};
 
 export const Toolbar = ({ editor }: Props) => {
-  if (!editor) return null
+  if (!editor) return null;
 
   return (
-    <div className={tw(base.container, style)}>
+    <div className={cx(base.container, style)}>
       <button
         onClick={() => editor.chain().focus().toggleBold().run()}
         className={editor.isActive("bold") ? "is-active" : ""}
@@ -117,5 +116,5 @@ export const Toolbar = ({ editor }: Props) => {
       <button onClick={() => editor.chain().focus().undo().run()}>undo</button>
       <button onClick={() => editor.chain().focus().redo().run()}>redo</button>
     </div>
-  )
-}
+  );
+};

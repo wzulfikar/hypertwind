@@ -1,8 +1,7 @@
-import { story } from "@storybook-util"
-import { tw } from "@components/util"
-import { MultiStep } from "."
+import { story } from "@storybook-util";
+import { MultiStep } from ".";
 
-export default story(MultiStep)
+export default story(MultiStep);
 
 const steps: React.ComponentProps<typeof MultiStep>["steps"] = [
   {
@@ -30,10 +29,10 @@ const steps: React.ComponentProps<typeof MultiStep>["steps"] = [
     description: "Iusto et officia maiores porro ad non quas.",
     status: "todo",
   },
-]
+];
 
 export const Basic = () => (
   <MultiStep steps={steps}>
     {({ step, idx }) => <div>Current step: {idx + 1}</div>}
   </MultiStep>
-)
+);

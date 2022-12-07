@@ -20,10 +20,9 @@ fs.mkdirSync(dir)
 
 const templates = {
   "index.ts": `export * from "./${componentName}"\n`,
-  [`${componentName}.tsx`]: `import { apply, tw } from "@components/util"
-
+  [`${componentName}.tsx`]: `
 const base = {
-  container: apply\`flex\`,
+  container: "flex",
 }
 
 const colors = {
@@ -38,7 +37,7 @@ type Props = {
 }
 
 export const ${componentName} = ({ children, color = "red", styles }: Props) => {
-  return <div className={tw(base.container, styles?.container, colors[color])}>{children}</div>
+  return <div className={cx(base.container, styles?.container, colors[color])}>{children}</div>
 }
 `,
   [`${componentName}.test.tsx`]: `import { render } from "@test"
@@ -56,7 +55,6 @@ describe("${componentName}", () => {
 })
 `,
   [`${componentName}.stories.tsx`]: `import { story } from "@storybook-util"
-import { tw } from "@components/util"
 import { ${componentName} } from "."
 
 export default story(${componentName})

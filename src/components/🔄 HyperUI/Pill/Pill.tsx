@@ -1,22 +1,21 @@
-import { apply, tw } from "@components/util"
-
+import { cx } from "@twind/core";
 const base = {
-  container: apply`bg-gray-100 inline-flex items-center px-3 py-1.5 space-x-2 rounded-full`,
-  text: apply`text-[12px] font-medium`,
-  image: apply`object-cover w-6 h-6 rounded-full bg-gray-300`,
-}
+  container: `bg-gray-100 inline-flex items-center px-3 py-1.5 space-x-2 rounded-full`,
+  text: `text-[12px] font-medium`,
+  image: `object-cover w-6 h-6 rounded-full bg-gray-300`,
+};
 
 const imageLayouts = {
   left: "-ml-1.5 mr-.5",
   right: "ml-1.5 -mr-1.5",
-}
+};
 
 type Props = {
-  children: string
-  image?: string
-  imageLayout?: "left" | "right"
-  styles?: StyleOverride<typeof base>
-}
+  children: string;
+  image?: string;
+  imageLayout?: "left" | "right";
+  styles?: StyleOverride<typeof base>;
+};
 
 export const Pill = ({
   children,
@@ -26,7 +25,7 @@ export const Pill = ({
 }: Props) => {
   return (
     <strong
-      className={tw(
+      className={cx(
         base.container,
         imageLayout === "right" && "flex-row-reverse",
         imageLayout === "right" ? "pl-2" : "pl-3",
@@ -35,14 +34,14 @@ export const Pill = ({
     >
       {image ? (
         <img
-          className={tw(base.image, imageLayouts[imageLayout])}
+          className={cx(base.image, imageLayouts[imageLayout])}
           src={image}
           alt={children}
         />
       ) : (
         <></>
       )}
-      <span className={tw(base.text)}>{children}</span>
+      <span className={base.text}>{children}</span>
     </strong>
-  )
-}
+  );
+};

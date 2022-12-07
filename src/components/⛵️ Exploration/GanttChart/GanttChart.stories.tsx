@@ -1,5 +1,4 @@
 import { story, noop } from "@storybook-util";
-import { tw } from "@components/util";
 import { GanttChart, GanttTask, ViewMode } from ".";
 import "gantt-task-react/dist/index.css";
 
@@ -74,10 +73,9 @@ export const Year = () => <GanttChart tasks={tasks} viewMode={ViewMode.Year} />;
 export const WithHandlers = () => (
   <GanttChart
     tasks={tasks}
-    onDateChange={noop("onTaskChange")}
+    onDateChange={noop("onDateChange")}
     onProgressChange={noop("onProgressChange")}
-    onDoubleClick={noop("onDblClick")}
-    onClick={noop("onClick")}
+    onDoubleClick={noop("onDoubleClick")}
     onSelect={noop("onSelect")}
     onExpanderClick={noop("onExpanderClick")}
   />
