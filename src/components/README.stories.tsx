@@ -1,7 +1,6 @@
-import { seeInGithub } from "@storybook-util"
+import { seeInGithub } from "@storybook-util";
 
-const docs = `
-#### Why did I created this?
+const docs = `#### Why did I created this?
 
 I want to have a repo that I can use to play around with React. 
 
@@ -62,7 +61,7 @@ export const WithHandler = () => <Button onClick={noop("onClick")}>Button</Butto
 - CI/CD is available out of the box via Github Action (see \`.github/workflows/storybook.yml\`). The job will trigger on push if the changes affect any .ts/.tsx files in src/components.
 
 ---
-`
+`;
 
 export default {
   title: "README",
@@ -73,8 +72,8 @@ export default {
       },
     },
   },
-}
+};
 
 export const StartHere = () => (
   <div>Click the "Docs" tab to see the content.</div>
-)
+);
