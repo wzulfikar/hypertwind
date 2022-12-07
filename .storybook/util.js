@@ -3,7 +3,7 @@ const GITHUB_REPO = "https://github.com/wzulfikar/unwind"
 export const noop =
   (name) =>
     (...args) =>
-      console.log(name, args)
+      console.log(name, ...args)
 
 export const seeInGithub = (componentName, componentPath) => {
   if (!componentName) {
