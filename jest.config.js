@@ -15,7 +15,7 @@ module.exports = {
       { jsc: { transform: { react: { runtime: "automatic" } } } },
     ],
   },
-  transformIgnorePatterns: ["!node_modules/@twind/core/core.browser.js"],
+  transformIgnorePatterns: ["!node_modules/@twind/core/core.browser.js", "!node_modules/@tiptap/core/dist/tiptap-core.cjs"],
   testPathIgnorePatterns: ["<rootDir>/node_modules/"],
   moduleNameMapper: {
     ...pathsToModuleNameMapper(paths, { prefix: "<rootDir>/" }),

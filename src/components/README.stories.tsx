@@ -1,6 +1,7 @@
 import { seeInGithub } from "@storybook-util";
 
-const docs = `#### Why did I create this?
+const docs = `
+#### Why did I create this?
 
 I want to have a repo that I can use to play around with React. 
 
