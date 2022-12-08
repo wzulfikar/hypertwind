@@ -1,0 +1,21 @@
+import { install } from "@twind/core"
+import config from "./twind.config"
+
+// Override `warning` event from Twind to suppress false warnings.
+// This override need to run before installing twind (`install(config)`).
+addEventListener('warning', (event) => {
+  event.preventDefault()
+
+  const warning = event.detail
+
+  // Skip warning for storybook classes
+  if (warning.code === "TWIND_INVALID_CLASS" && warning.detail.startsWith("sb-")) {
+    return
+  }
+
+  // { message: '...', code: 'TWIND_INVALID_CLASS', detail: '<className>'}
+  // { message: '...', code: 'TWIND_INVALID_CSS', detail: '<css>'}
+  console.warn(warning.message)
+})
+
+install(config)
