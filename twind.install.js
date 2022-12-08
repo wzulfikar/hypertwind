@@ -8,7 +8,7 @@ addEventListener('warning', (event) => {
 
   const warning = event.detail
 
-  // Skip warning for storybook classes
+  // Skip warnings for css classes from Storybook
   if (warning.code === "TWIND_INVALID_CLASS" && warning.detail.startsWith("sb-")) {
     return
   }
