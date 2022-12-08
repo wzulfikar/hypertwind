@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - wzulfikar/gh-action-change-yarn-to-pnpm
     # paths:
     #   - "src/components/**/*.ts"
     #   - "src/components/**/*.tsx"
