@@ -16,19 +16,29 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2.3.1
 
-      - name: Cache pnpm modules
-        uses: actions/cache@v2
-        env:
-          cache-name: cache-pnpm-modules
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
+        id: pnpm-install
         with:
-          # pnpm cache files are stored in `~/.pnpm-store` on Linux/macOS
-          path: ~/.pnpm-store
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ matrix.node-version }}
+          version: 7
+          run_install: false
+
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+      - uses: actions/cache@v3
+        name: Setup pnpm cache
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
-            {{ runner.os }}-build-${{ env.cache-name }}-${{ matrix.node-version }}
+            ${{ runner.os }}-pnpm-store-
 
       - name: Install dependencies
-        run: pnpm install --silent --frozen-lockfile
+        run: pnpm install
 
       - name: Run typechecking
         run: pnpm tsc --noemit
