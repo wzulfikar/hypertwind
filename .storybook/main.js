@@ -4,8 +4,8 @@ module.exports = {
   stories: ["../src/**/*.stories.tsx"],
   addons: [
     "@storybook/addon-essentials",
-    "@storybook/addon-actions",
-    "@storybook/addon-console"
+    "@storybook/addon-console",
+    "@storybook/addon-knobs",
   ],
   core: {
     builder: "webpack5",

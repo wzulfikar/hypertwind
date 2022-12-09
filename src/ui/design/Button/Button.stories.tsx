@@ -1,5 +1,6 @@
 import { ComponentStory } from "@storybook/react";
 import { story } from "@storybook-util";
+import { text } from "@storybook/addon-knobs";
 
 import { Button } from "./Button";
 
@@ -11,7 +12,7 @@ export default {
 };
 
 const Template: ComponentStory<typeof Button> = (args) => (
-  <Button {...args}>Button</Button>
+  <Button {...args}>{text("label", "Button")}</Button>
 );
 
 export const Primary = Template.bind({});
