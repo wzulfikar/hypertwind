@@ -17,7 +17,7 @@
     "@tiptap/extension-character-count": "^2.0.0-beta.31",
     "@tiptap/react": "^2.0.0-beta.114",
     "@tiptap/starter-kit": "^2.0.0-beta.191",
-    "@twind/core": "^1.0.1",
+    "@twind/core": "^1.0.3",
     "@twind/forms": "^0.1.4",
     "@twind/preset-autoprefix": "^1.0.1",
     "@twind/preset-tailwind": "^1.0.1",
