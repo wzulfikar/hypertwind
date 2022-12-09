@@ -4,7 +4,6 @@ specifiers:
   '@babel/preset-typescript': ^7.18.6
   '@faker-js/faker': ^7.5.0
   '@headlessui/react': 1.6.6
-  '@storybook/addon-actions': 6.5.14
   '@storybook/addon-console': 1.2.3
   '@storybook/addon-essentials': 6.5.14
   '@storybook/builder-webpack5': 6.5.14
@@ -75,8 +74,7 @@ dependencies:
 devDependencies:
   '@babel/preset-typescript': 7.18.6
   '@faker-js/faker': 7.5.0
-  '@storybook/addon-actions': 6.5.14_biqbaboplfbrettd7655fr4n2y
-  '@storybook/addon-console': 1.2.3_473b6rbrlfbkiblbxydosemc4u
+  '@storybook/addon-console': 1.2.3
   '@storybook/addon-essentials': 6.5.14_reageqapiqqt4xknybmptuy454
   '@storybook/builder-webpack5': 6.5.14_gnpjyu2zpng3ocit5qjrsgv23u
   '@storybook/manager-webpack5': 6.5.14_gnpjyu2zpng3ocit5qjrsgv23u
@@ -3002,12 +3000,11 @@ packages:
       util-deprecate: 1.0.2
     dev: true
 
-  /@storybook/addon-console/1.2.3_473b6rbrlfbkiblbxydosemc4u:
+  /@storybook/addon-console/1.2.3:
     resolution: {integrity: sha512-w5uCUwECA28fdZWoa+A4e/RS9XzBStdd3TwwmpSM5m4fjURJI7Qr+uVq30UeRdgZRH1K7CdWzYUE6RxWXMdVyw==}
     peerDependencies:
       '@storybook/addon-actions': '*'
     dependencies:
-      '@storybook/addon-actions': 6.5.14_biqbaboplfbrettd7655fr4n2y
       global: 4.4.0
     dev: true
 
