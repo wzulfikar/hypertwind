@@ -4,11 +4,11 @@ on:
   push:
     branches:
       - main
+    # See "Patterns to match file paths":
+    # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#patterns-to-match-file-paths
     paths:
-      - "src/components/**/*.ts"
-      - "src/components/**/*.tsx"
-      - "src/ui/**/*.ts"
-      - "src/ui/**/*.tsx"
+      - "src/components/**/*.tsx?"
+      - "src/ui/**/*.tsx?"
 
 jobs:
   deploy-storybook:
