@@ -5,8 +5,10 @@ on:
     branches:
       - main
     paths:
-      - "src/components/**/*.(ts|tsx)"
-      - "src/ui/**/*.(ts|tsx)"
+      - "src/components/**/*.ts"
+      - "src/components/**/*.tsx"
+      - "src/ui/**/*.ts"
+      - "src/ui/**/*.tsx"
 
 jobs:
   deploy-storybook:
