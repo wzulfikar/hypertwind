@@ -30,7 +30,9 @@
     "react-hook-form": "^7.34.0",
     "react-icons": "^4.4.0",
     "react-script-hook": "^1.7.2",
+    "react-winbox": "^1.4.2",
     "storybook": "6.5.14",
+    "ts-pattern": "^4.0.6",
     "zod": "^3.18.0"
   },
   "devDependencies": {

@@ -43,8 +43,10 @@ specifiers:
   react-hook-form: ^7.34.0
   react-icons: ^4.4.0
   react-script-hook: ^1.7.2
+  react-winbox: ^1.4.2
   storybook: 6.5.14
   ts-jest: 28.0.7
+  ts-pattern: ^4.0.6
   tsconfig-paths: ^4.1.0
   tsconfig-paths-webpack-plugin: 4.0.0
   typescript: 4.7.4
@@ -68,7 +70,9 @@ dependencies:
   react-hook-form: 7.34.0_react@18.2.0
   react-icons: 4.4.0_react@18.2.0
   react-script-hook: 1.7.2_biqbaboplfbrettd7655fr4n2y
+  react-winbox: 1.4.2_biqbaboplfbrettd7655fr4n2y
   storybook: 6.5.14_xrxvbtylmve4l2tr3vmmqgfp7q
+  ts-pattern: 4.0.6
   zod: 3.18.0
 
 devDependencies:
@@ -11916,6 +11920,17 @@ packages:
       react-dom: 18.2.0_react@18.2.0
     dev: false
 
+  /react-winbox/1.4.2_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-wNe3Ug6ZLiq1Mxk4CCUWtuR3xX2EPYqijtg83Dh/r6cP5zHFzTersmNPLNffOCRLMxlMsUvx0VNaID/7KbleBg==}
+    peerDependencies:
+      react: '>=16.14.0'
+      react-dom: '>=16.14.0'
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      winbox: 0.2.6
+    dev: false
+
   /react/18.2.0:
     resolution: {integrity: sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==}
     engines: {node: '>=0.10.0'}
@@ -13255,6 +13270,10 @@ packages:
       yargs-parser: 21.1.1
     dev: true
 
+  /ts-pattern/4.0.6:
+    resolution: {integrity: sha512-sFHQYD4KoysBi7e7a2mzDPvRBeqA4w+vEyRE+P5MU9VLq8eEYxgKCgD9RNEAT+itGRWUTYN+hry94GDPLb1/Yw==}
+    dev: false
+
   /ts-pnp/1.2.0_typescript@4.7.4:
     resolution: {integrity: sha512-csd+vJOb/gkzvcCHgTGSChYpy5f1/XKNsmvBGO4JXS+z1v2HobugDz4s1IeFXM3wZB44uczs+eazB5Q/ccdhQw==}
     engines: {node: '>=6'}
@@ -13932,6 +13951,10 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       string-width: 4.2.3
+
+  /winbox/0.2.6:
+    resolution: {integrity: sha512-P/Tqjcf4bA0Hr1lqR1YliQsisV8xf+t56xgCtqWN8Urw9RLonYSVQGYw+qILp9tgkPs1o7e1dsl6dskaS6GudQ==}
+    dev: false
 
   /word-wrap/1.2.3:
     resolution: {integrity: sha512-Hz/mrNwitNRh/HUAtM/VT/5VH+ygD6DV7mYKZAtHOrbs8U7lvPS6xf7EJKMF0uW1KJCl0H701g3ZGus+muE5vQ==}

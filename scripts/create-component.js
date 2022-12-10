@@ -72,9 +72,6 @@ import { ${componentName} } from "./${componentName}";
 
 export default {
   ...story(${componentName}, { path: "ui/design" }),
-  argTypes: {
-    rounded: { control: "boolean" },
-  },
   args: {
     _label: "${componentName}",
   },
