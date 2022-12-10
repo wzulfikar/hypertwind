@@ -22,7 +22,7 @@
       "@config/*": ["src/config/*"],
       "@lib/*": ["src/lib/*"],
       "@util/*": ["src/util/*"],
-      "@storybook-util": [".storybook/util.js"],
+      "@storybook-util": [".storybook/util.ts"],
       "@test": ["test"],
       "@test/*": ["test/*"]
     },
