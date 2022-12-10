@@ -5,8 +5,8 @@ on:
     branches:
       - main
     paths:
-      - "src/components/**/*.ts"
-      - "src/components/**/*.tsx"
+      - "src/components/**/*.(ts|tsx)"
+      - "src/ui/**/*.(ts|tsx)"
 
 jobs:
   deploy-storybook:
