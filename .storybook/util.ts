@@ -3,7 +3,7 @@ import { ComponentStory as SBComponentStory } from "@storybook/react";
 const GITHUB_REPO = "https://github.com/wzulfikar/unwind"
 
 /**
- * GlobalArgs will be injected into component's props so you can use it inside `Template`.
+ * `GlobalArgs` will be injected into component's props so you can use it inside "Template".
  * Example:
  * ```
  * const Template: ComponentStory<typeof Button> = (args) => (
