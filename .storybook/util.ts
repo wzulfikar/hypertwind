@@ -2,13 +2,20 @@ import { ComponentStory as SBComponentStory } from "@storybook/react";
 
 const GITHUB_REPO = "https://github.com/wzulfikar/unwind"
 
-export type StoryArgs = {
+export type GlobalArgs = {
   _darkMode: boolean
   _label: string
 }
+export type GlobalArgTypes = Record<
+  keyof GlobalArgs,
+  { control: "boolean" | "string" }
+>
 
+/**
+ * Helper type to tie component story with global args
+ */
 export type ComponentStory<T extends (...args: any) => any> = SBComponentStory<
-  (args: Parameters<T>[0] & StoryArgs) => JSX.Element
+  (args: Parameters<T>[0] & GlobalArgs) => JSX.Element
 >;
 
 export const noop =

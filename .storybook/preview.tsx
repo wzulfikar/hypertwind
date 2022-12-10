@@ -1,21 +1,21 @@
 import "@storybook/addon-actions/register";
 import { addDecorator } from "@storybook/react";
 import { withConsole } from "@storybook/addon-console";
-import type { GlobalArgs } from "./util";
+import type { GlobalArgs, GlobalArgTypes } from "./util";
 import "../twind.install";
 
 // Add decorators
-addDecorator((storyFn, context) => withConsole()(storyFn)(context));
-addDecorator((storyFn, context) => {
+addDecorator((storyFn, ctx) => withConsole()(storyFn)(ctx));
+addDecorator((storyFn, ctx) => {
   // Toggle dark mode based on value `_darkMode`. Will also change canvas background.
-  const isDarkMode = context.args._darkMode;
-  const darkColor = context.parameters.backgrounds.values.find(
+  const isDarkMode = ctx.args._darkMode;
+  const darkColor = ctx.parameters.backgrounds.values.find(
     (v) => v.name == "dark"
   ).value;
   document.querySelector(".sb-show-main").style.background = isDarkMode
     ? darkColor
     : null;
-  return <div className={isDarkMode ? "dark" : ""}>{storyFn(context)}</div>;
+  return <div className={isDarkMode ? "dark" : ""}>{storyFn(ctx)}</div>;
 });
 
 export const parameters = {
@@ -28,10 +28,7 @@ export const parameters = {
   },
 };
 
-export const argTypes: Record<
-  keyof GlobalArgs,
-  { control: "boolean" | "string" }
-> = {
+export const argTypes: GlobalArgTypes = {
   _darkMode: { control: "boolean" },
   _label: { control: "text" },
 };
