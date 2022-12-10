@@ -1,13 +1,15 @@
 const fs = require("fs")
 
-const componentName = process.argv[2]
+const splitArg = process.argv[2].split("/");
+const path = splitArg.slice(0, -1).join("/");
+const componentName = splitArg.pop();
 if (!componentName) {
-  console.log("Usage: yarn create-component {ComponentName}")
-  console.log("Example: yarn create-component MyComponent")
+  console.log("Usage: pnpm create-component {path/ComponentName}")
+  console.log("Example: pnpm create-component components/MyButton")
   process.exit(1)
 }
 
-const dir = `./src/components/${componentName}`
+const dir = `./src/${path}/${componentName}`
 if (fs.existsSync(dir)) {
   console.log("Error: component already exists")
   console.log("→", dir)
@@ -20,26 +22,35 @@ fs.mkdirSync(dir)
 
 const templates = {
   "index.ts": `export * from "./${componentName}"\n`,
-  [`${componentName}.tsx`]: `import { cx } from "@twind/core"
+  [`${componentName}.tsx`]: `import type { VariantProps } from "class-variance-authority";
+import { cva } from "class-variance-authority";
 
-const base = {
-  container: "flex",
-}
+type Variants = VariantProps<typeof style>;
+export type ${componentName}Props = Variants & {
+  children: React.ReactNode;
+};
 
-const colors = {
-  red: "text-red-500",
-  green: "text-green-500",
-}
+export const style = cva(
+  ["text-white"],
+  {
+    variants: {
+      intent: {
+        basic: "bg-gray-400",
+      },
+    },
+    defaultVariants: {
+      intent: "basic",
+    },
+  }
+);
 
-type Props = {
-  children: React.ReactNode
-  color?: keyof typeof colors
-  styles?: StyleOverride<typeof base>
-}
-
-export const ${componentName} = ({ children, color = "red", styles }: Props) => {
-  return <div className={cx(base.container, styles?.container, colors[color])}>{children}</div>
-}
+export const ${componentName} = ({ children, ...variants }: ${componentName}Props) => {
+  return (
+    <div className={style(variants)}>
+      {children}
+    </div>
+  );
+};
 `,
   [`${componentName}.test.tsx`]: `import { render } from "@test"
 import { ${componentName} } from "."
@@ -55,12 +66,23 @@ describe("${componentName}", () => {
   })
 })
 `,
-  [`${componentName}.stories.tsx`]: `import { story } from "@storybook-util"
-import { ${componentName} } from "."
+  [`${componentName}.stories.tsx`]: `import { story, ComponentStory } from "@storybook-util";
 
-export default story(${componentName})
+import { ${componentName} } from "./${componentName}";
 
-export const Basic = () => <${componentName}>Hello world!</${componentName}>
+export default {
+  ...story(${componentName}, { path: "${path}" }),
+  args: {
+    _label: "${componentName}",
+  },
+};
+
+const Template: ComponentStory<typeof ${componentName}> = (args) => (
+  <${componentName} {...args}>{args._label}</${componentName}>
+);
+
+export const Basic = Template.bind({});
+Basic.args = { intent: "basic" };
 `,
 }
 

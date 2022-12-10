@@ -3,5 +3,6 @@ import presetAutoprefix from '@twind/preset-autoprefix'
 import presetTailwind from '@twind/preset-tailwind'
 
 export default defineConfig({
+  darkMode: 'class',
   presets: [presetAutoprefix(), presetTailwind()],
 })
