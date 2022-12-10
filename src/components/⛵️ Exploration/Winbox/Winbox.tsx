@@ -7,13 +7,11 @@ import { Link } from "@ui/design/Link";
 import { P } from "@ui/typography/Paragraph";
 
 type Variants = VariantProps<typeof style>;
-export type WinboxProps = Variants & {
-  children: React.ReactNode;
-};
+export type WinboxProps = Variants & {};
 
 export const style = cva([], {});
 
-export const Winbox = ({ children, ...variants }: WinboxProps) => {
+export const Winbox = ({ ...variants }: WinboxProps) => {
   const baseProps = {
     x: "center",
     y: "center",
