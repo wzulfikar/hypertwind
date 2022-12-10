@@ -1,6 +1,4 @@
-import { ComponentStory } from "@storybook/react";
-import { story } from "@storybook-util";
-import { text } from "@storybook/addon-knobs";
+import { story, ComponentStory } from "@storybook-util";
 
 import { Button } from "./Button";
 
@@ -9,10 +7,13 @@ export default {
   argTypes: {
     rounded: { control: "boolean" },
   },
+  args: {
+    _label: "Button",
+  },
 };
 
 const Template: ComponentStory<typeof Button> = (args) => (
-  <Button {...args}>{text("label", "Button")}</Button>
+  <Button {...args}>{args._label}</Button>
 );
 
 export const Primary = Template.bind({});

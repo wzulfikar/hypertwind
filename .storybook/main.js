@@ -5,7 +5,6 @@ module.exports = {
   addons: [
     "@storybook/addon-essentials",
     "@storybook/addon-console",
-    "@storybook/addon-knobs",
   ],
   core: {
     builder: "webpack5",
