@@ -71,7 +71,7 @@ describe("${componentName}", () => {
 import { ${componentName} } from "./${componentName}";
 
 export default {
-  ...story(${componentName}, { path: "ui/design" }),
+  ...story(${componentName}, { path: "${path}" }),
   args: {
     _label: "${componentName}",
   },

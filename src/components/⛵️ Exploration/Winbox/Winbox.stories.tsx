@@ -3,7 +3,7 @@ import { story, ComponentStory } from "@storybook-util";
 import { Winbox } from "./Winbox";
 
 export default {
-  ...story(Winbox, { path: "ui/design" }),
+  ...story(Winbox, { path: "components/⛵️ Exploration" }),
 };
 
 const Template: ComponentStory<typeof Winbox> = (args) => <Winbox {...args} />;
