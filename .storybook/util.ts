@@ -2,14 +2,23 @@ import { ComponentStory as SBComponentStory } from "@storybook/react";
 
 const GITHUB_REPO = "https://github.com/wzulfikar/unwind"
 
+/**
+ * GlobalArgs will be injected into component's props so you can use it inside `Template`.
+ * Example:
+ * ```
+ * const Template: ComponentStory<typeof Button> = (args) => (
+ *   <Button {...args}>{args._label || "Button"}</Button>
+ * );
+ * ```
+ * 
+ * To add new global arg, add the entry in `GlobalArgs` and run `tsc` to see 
+ * which other places you need to update.
+ */
 export type GlobalArgs = {
   _darkMode: boolean
   _label: string
 }
-export type GlobalArgTypes = Record<
-  keyof GlobalArgs,
-  { control: "boolean" | "string" }
->
+export type GlobalArgTypes = Record<keyof GlobalArgs, { control: "boolean" | "string" }>
 
 /**
  * Helper type to tie component story with global args
