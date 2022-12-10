@@ -35,5 +35,5 @@ export const argTypes: GlobalArgTypes = {
 
 export const args: GlobalArgs = {
   _darkMode: false,
-  _label: "My label",
+  _label: undefined,
 };

@@ -7,13 +7,10 @@ export default {
   argTypes: {
     rounded: { control: "boolean" },
   },
-  args: {
-    _label: "Button",
-  },
 };
 
 const Template: ComponentStory<typeof Button> = (args) => (
-  <Button {...args}>{args._label}</Button>
+  <Button {...args}>{args._label || "Button"}</Button>
 );
 
 export const Primary = Template.bind({});
