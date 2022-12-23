@@ -1,6 +1,7 @@
 import { ComponentStory } from "@storybook/react";
 import { story } from "@storybook-util";
 import { Button } from "./Button";
+import { useFetchUser } from "./useFetchUser";
 
 export default {
   ...story(Button),
@@ -22,3 +23,16 @@ const Template: ComponentStory<typeof Button> = (args) => (
 
 export const Sizes = Template.bind({});
 Sizes.args = { color: "green" };
+
+export const WithUseUserHook = () => {
+  const [user, fetchUser] = useFetchUser();
+  return (
+    <div>
+      <p>{user?.name || "(no user)"}</p>
+      <br />
+      <Button onClick={() => fetchUser(1)} size="lg">
+        Fetch user
+      </Button>
+    </div>
+  );
+};
