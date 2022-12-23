@@ -9,14 +9,19 @@ import { P } from "@ui/typography/Paragraph";
 type Variants = VariantProps<typeof style>;
 export type WinboxProps = Variants & {};
 
-export const style = cva([], {});
+export const style = cva([]);
+
+// HACK: somehow WinBoxPropType doesn't include `icon`
+interface WinBoxPropTypeWithIcon extends WinBoxPropType {
+  icon?: string;
+}
 
 export const Winbox = ({ ...variants }: WinboxProps) => {
   const baseProps = {
     x: "center",
     y: "center",
   };
-  const [windows, setWindows] = useState<WinBoxPropType[]>([
+  const [windows, setWindows] = useState<WinBoxPropTypeWithIcon[]>([
     {
       ...baseProps,
       id: "1",
@@ -56,7 +61,7 @@ export const Winbox = ({ ...variants }: WinboxProps) => {
     setIsWindowOpen((state) => ({ ...state, [windowId]: false }));
   };
 
-  const handleOpenWindow = (windowId: number) => {
+  const handleOpenWindow = (windowId: string) => {
     setIsWindowOpen((state) => ({ ...state, [windowId]: true }));
   };
 
@@ -79,7 +84,7 @@ export const Winbox = ({ ...variants }: WinboxProps) => {
         <ol className="grid gap-3">
           {windows.map((window, i) => (
             <li key={window.id}>
-              <Button onClick={() => handleOpenWindow(window.id)}>
+              <Button onClick={() => handleOpenWindow(window.id as string)}>
                 {window.title}
               </Button>
             </li>
@@ -89,7 +94,7 @@ export const Winbox = ({ ...variants }: WinboxProps) => {
       <br />
 
       {windows.map(({ id, ...props }) =>
-        isWindowOpen[id] ? (
+        id && isWindowOpen[id] ? (
           <WinBox
             key={id}
             id={id}

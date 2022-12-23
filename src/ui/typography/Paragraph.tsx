@@ -3,7 +3,7 @@ import { cva } from "class-variance-authority";
 
 type Variants = VariantProps<typeof style>;
 export type ParagraphProps = Variants & {
-  children: JSX.Element | string;
+  children: React.ReactNode;
 };
 
 export const style = cva(["text-gray-900 dark:text-gray-300"]);

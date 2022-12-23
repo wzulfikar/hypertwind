@@ -4,10 +4,9 @@ import { match, P } from "ts-pattern";
 import { AiFillGithub } from "react-icons/ai";
 
 type Variants = VariantProps<typeof style>;
-export type LinkProps = Variants &
-  HTMLLinkElement & {
-    children?: JSX.Element | string;
-  };
+export type LinkProps = Variants & { href: string; target?: string } & {
+  children?: JSX.Element | string;
+};
 
 export const style = cva(["text-blue-600"], {
   variants: {
