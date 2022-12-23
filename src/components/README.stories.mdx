@@ -1,0 +1,53 @@
+import { Meta } from "@storybook/addon-docs";
+import { seeInGithub } from "@storybook-util";
+
+<Meta title="README" />
+
+# Why this?
+
+I want to have a repo that I can use to play around with React.
+
+Example of Story:
+
+```ts
+// src/components/Button.stories.tsx
+import { story, noop } from "@storybook-util";
+import { Button } from ".";
+
+export default story(Button);
+
+export const Basic = () => <Button>Basic button</Button>;
+export const WithHandler = () => (
+  <Button onClick={noop("onClick")}>Button</Button>
+);
+```
+
+# Conventions
+
+- To create new component, use yarn create-component MyComponent. For example, running yarn create-component Button will create these files:
+
+  ```
+  src
+  └─ components
+      └─ Button
+        ├─ Button.stories.tsx
+        ├─ Button.test.tsx
+        ├─ Button.tsx
+        └─ index.ts
+  ```
+
+- Use story to export your component. Your story will automatically have the "See in Github" link in its documentation. This is equivalent to storybook default export:
+
+  ```ts
+  export default {
+    component: YourComponent,
+    // ...
+  };
+  ```
+
+- With story, it's more concise because you just need to do export default story(YourComponent). You'll have the Github link of your component in the "Docs" tab and you can pass optional description as second argument: story(YourComponent, "This is my component").
+- Run yarn test MyComponent to test your component.
+- Put utility (helper) functions close to where it'll be used. For example, src/components/util.ts contains utility functions that can be used by components while src/util contains utility functions that can be used in the wider scope (eg. your backend code, if you have one).
+- CI/CD is available out of the box via Github Action (see .github/workflows/storybook.yml). The job will trigger on push if the changes affect any .ts/.tsx files in src/components.
+
+<p dangerouslySetInnerHTML={{ __html: seeInGithub({}) }} />

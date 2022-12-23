@@ -32,7 +32,7 @@ export const noop =
     (...args: any[]) =>
       console.log(name, ...args)
 
-export const seeInGithub = (componentName?: string, componentPath?: string) => {
+export const seeInGithub = ({ componentName = '', componentPath = '' }) => {
   if (!componentName) {
     return `See in Github: <a href='${GITHUB_REPO}'>${GITHUB_REPO}</a>`
   }
@@ -40,8 +40,8 @@ export const seeInGithub = (componentName?: string, componentPath?: string) => {
   return `See in Github: <a href='${GITHUB_REPO}/tree/main/${path}'>${path}</a>`
 }
 
-export const story = (component: React.FC<any>, { docs = '', path = "component" } = {}) => {
-  const githubLink = seeInGithub(component.displayName, path)
+export const story = (component: React.FC<any>, { docs = '', path = "components" } = {}) => {
+  const githubLink = seeInGithub({ componentName: component.displayName, componentPath: path })
   const componentDocs = docs ? docs + "<br/>" + githubLink : githubLink
   return {
     component: component,
