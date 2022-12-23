@@ -1,4 +1,4 @@
-import { BASE_URL } from '@config/app';
+import { BASE_URL } from '@/config/app';
 import nock from 'nock';
 
 type Args = {

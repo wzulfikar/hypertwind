@@ -31,5 +31,5 @@ export const useFetchUser = () => {
     })
   }, [])
 
-  return [user, fetchUser]
+  return [user, fetchUser] as const
 }

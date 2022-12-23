@@ -30,7 +30,7 @@ export const WithUseUserHook = () => {
     <div>
       <p>{user?.name || "(no user)"}</p>
       <br />
-      <Button onClick={() => fetchUser(1)} size="lg">
+      <Button onClick={() => fetchUser("1")} size="lg">
         Fetch user
       </Button>
     </div>

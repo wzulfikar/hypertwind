@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { cx } from "@twind/core";
-import { CloseButton, Transition } from "@components/shared";
+import { CloseButton, Transition } from "@/components/shared";
 
 const base = {
   container: `grid grid-cols-5 px-4 py-3 text-white bg-indigo-600`,

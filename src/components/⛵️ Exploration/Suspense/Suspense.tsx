@@ -1,4 +1,4 @@
-import { Spinner } from "@components/shared";
+import { Spinner } from "@/components/shared";
 
 type Props = {
   isLoading: boolean;

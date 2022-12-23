@@ -2,9 +2,9 @@ import type { VariantProps } from "class-variance-authority";
 import { cva } from "class-variance-authority";
 import { useState } from "react";
 import WinBox, { WinBoxPropType } from "react-winbox";
-import { Button } from "@ui/design/Button";
-import { Link } from "@ui/design/Link";
-import { P } from "@ui/typography/Paragraph";
+import { Button } from "@/ui/design/Button";
+import { Link } from "@/ui/design/Link";
+import { P } from "@/ui/typography/Paragraph";
 
 type Variants = VariantProps<typeof style>;
 export type WinboxProps = Variants & {};

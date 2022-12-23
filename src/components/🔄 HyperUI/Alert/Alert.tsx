@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { CloseButton, AlertIcon, Transition } from "@components/shared";
-import { ambientBox } from "@components/util";
+import { CloseButton, AlertIcon, Transition } from "@/components/shared";
+import { ambientBox } from "@/components/util";
 import { cx } from "@twind/core";
 
 const base = {

@@ -1,6 +1,6 @@
 import { useForm, FieldErrors } from "react-hook-form";
 import { IconType } from "react-icons/lib";
-import { capitalize } from "@components/util";
+import { capitalize } from "@/components/util";
 
 const base = {
   input: `w-full p-4 pr-12 text-sm border-gray-300 rounded-lg border`,

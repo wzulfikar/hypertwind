@@ -1,4 +1,4 @@
-import * as SvgPaths from "@components/shared/SvgPaths";
+import * as SvgPaths from "@/components/shared/SvgPaths";
 
 type Props = {
   type: AlertType;

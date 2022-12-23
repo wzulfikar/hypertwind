@@ -1,5 +1,5 @@
 import { story } from "@storybook-util";
-import { relativeTime, addDays } from "@util/date";
+import { relativeTime, addDays } from "@/util/date";
 import { Announcement } from "./Announcement";
 
 export default story(Announcement);
