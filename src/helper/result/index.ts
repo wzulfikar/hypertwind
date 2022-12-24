@@ -19,12 +19,12 @@ export function ok<TOk>(result: TOk): Ok<TOk> {
 export const defineErrors = <TErrorMap extends ErrorMap>(
   errorMap: TErrorMap
 ): ErrorFunc<TErrorMap> => {
-  return (kind: keyof TErrorMap, context?: string) => ({
+  return (kind: keyof TErrorMap, ctx?: string) => ({
     ok: false as const,
     error: {
       kind: kind,
       message: errorMap[kind],
-      context: context
+      ctx: ctx
     }
   });
 };
