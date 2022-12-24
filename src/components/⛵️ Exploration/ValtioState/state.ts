@@ -24,6 +24,9 @@ const initialValues = {
       .then((json) => {
         this.user = json;
       })
+      .catch((err) => {
+        alert(`error: ${err.message}`);
+      })
       .finally(() => {
         this.isFetching = false;
       });

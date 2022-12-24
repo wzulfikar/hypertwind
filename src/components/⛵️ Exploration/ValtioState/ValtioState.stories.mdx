@@ -1,0 +1,27 @@
+import { Meta } from "@storybook/addon-docs";
+
+import { ValtioState } from "./ValtioState";
+
+<Meta title="components/⛵️ Exploration/ValtioState" />
+
+# Valtio
+
+A demo of using valtio in React. Goals:
+
+- Show how to use valtio with some structure
+  - States and "business" logic is encapsulated inside `state.ts`
+  - There's a helper from `@/helper/resetState` to reset the state to its initial values
+  - The `state.ts` also shows how to do async operation with valtio (ie. `fetchUser`)
+  - Snapshot is exported as `useSnap` so the consumer doesn't need to be aware of valtio. Consumer only need to care about `import { state, useSnap } from "./state";`
+- Show valtio's automatic render optimization
+  - `ValtioState` doesn't re-render when `state.time` changes because it doesn't access `state.time` in its function body (it only accesses `state.count`)
+
+## Demo
+
+- Open browser console
+- You'll see `[ValtioState] snap.count: 0`. This log is called inside `<ValtioState/>` component.
+- Even though `state.time` changes every second, the `ValtioState` component doesn't re-render and thus, the log is static
+- Click the "Increment" button below and you'll see this log added: `[ValtioState] snap.count: 1`
+  - This happens because `<ValtioState/>` accesses the `state.count` in its function body, effectively telling valtio to subscribe to `state.count` and thus, triggering re-render when the `count` changes.
+
+<ValtioState />
