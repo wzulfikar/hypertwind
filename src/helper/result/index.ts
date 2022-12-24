@@ -1,4 +1,4 @@
-import type { Ok, ErrorFunc, ErrorMap } from "./types";
+import type { Ok, ErrorFunc } from "./types";
 
 export type { Ok, Result } from "./types";
 
@@ -16,10 +16,14 @@ export function ok<TOk>(result: TOk): Ok<TOk> {
 /**
  * Define possible errors and return an `error` function.
  */
-export const defineErrors = <TErrorMap extends ErrorMap>(
+export const defineErrors = <
+  Key extends string,
+  Value extends string,
+  TErrorMap extends Record<Key, Value>
+>(
   errorMap: TErrorMap
 ): ErrorFunc<TErrorMap> => {
-  return (kind: keyof TErrorMap, ctx?: string) => ({
+  return (kind, ctx?: string) => ({
     ok: false as const,
     error: {
       kind: kind,

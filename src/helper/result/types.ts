@@ -4,14 +4,18 @@ export type Ok<T> = {
   ok: true;
 } & T;
 
-export type ErrorFunc<T extends ErrorMap> = (kind: keyof T, ctx?: string) => Error<T>;
+export type ErrorMap<TMap extends Record<string, string> = any> = Readonly<TMap>;
 
-export type ErrorMap = Readonly<Record<string, string>>;
-
-type Error<TErrorMap extends ErrorMap = any> = {
-  ok: false;
-  error: {
-    kind: keyof TErrorMap;
-    message: TErrorMap[keyof TErrorMap];
-  };
+export type ErrorFunc<TErrorMap extends ErrorMap> = <TKind extends keyof TErrorMap, TArgs extends [kind: TKind, ctx?: string]>(...args: TArgs) => {
+  ok: false,
+  error: TArgs[1] extends string ? {
+    kind: TArgs[0],
+    message: TErrorMap[TArgs[0]],
+    ctx: TArgs[1]
+  } : {
+    kind: TArgs[0],
+    message: TErrorMap[TArgs[0]],
+  }
 };
+
+type Error = ReturnType<ErrorFunc<any>>
