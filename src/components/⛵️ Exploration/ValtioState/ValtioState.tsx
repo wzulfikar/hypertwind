@@ -1,7 +1,8 @@
 import type { VariantProps } from "class-variance-authority";
 import { cva } from "class-variance-authority";
+
+import { Count, Time, User } from "./components";
 import { state, useSnap } from "./state";
-import { Time, Count, User } from "./components";
 
 type Variants = VariantProps<typeof style>;
 export type ValtioStateProps = Variants & {

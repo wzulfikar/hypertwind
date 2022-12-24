@@ -1,4 +1,4 @@
-import { story, ComponentStory } from "@storybook-util";
+import { ComponentStory, story } from "@storybook-util";
 
 import { ValtioState } from "./ValtioState";
 

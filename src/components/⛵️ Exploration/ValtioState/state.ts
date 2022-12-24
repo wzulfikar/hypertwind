@@ -1,9 +1,8 @@
-import { resetState } from "@/helper/resetState";
 import { proxy, useSnapshot } from "valtio";
 
-type MaybeUser =
-  | { id: string; name: string }
-  | undefined;
+import { resetState } from "@/helper/resetState";
+
+type MaybeUser = { id: string; name: string } | undefined;
 
 const initialValues = {
   time: 0,
@@ -21,13 +20,13 @@ const initialValues = {
 
     const randomId = Math.floor(Math.random() * 10) + 1; // Random int between 1 to 10
     return fetch(`https://jsonplaceholder.typicode.com/users/${randomId}`)
-      .then(res => res.json())
-      .then(json => {
-        this.user = json
+      .then((res) => res.json())
+      .then((json) => {
+        this.user = json;
       })
       .finally(() => {
         this.isFetching = false;
-      })
+      });
   },
   reset() {
     resetState(this, initialValues);
