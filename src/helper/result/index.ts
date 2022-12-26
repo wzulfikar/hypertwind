@@ -6,12 +6,10 @@ export type { Ok, Result } from "./types";
  * Return successful result indicated by `ok: true`
  * and the corresponding data.
  */
-export function ok<TOk>(result: TOk): Ok<TOk> {
-  return {
-    ok: true as const,
-    ...result
-  };
-}
+export const ok = <TOk>(result: TOk): Ok<TOk> => ({
+  ok: true as const,
+  ...result
+})
 
 /**
  * Define possible errors and return an `error` function.
