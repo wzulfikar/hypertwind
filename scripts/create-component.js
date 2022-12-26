@@ -25,11 +25,9 @@ const templates = {
   [`${componentName}.tsx`]: `import type { VariantProps } from "class-variance-authority";
 import { cva } from "class-variance-authority";
 
-type Variants = VariantProps<typeof style>;
-export type ${componentName}Props = Variants & {
+export type ${componentName}Props = VariantProps<typeof style> & {
   children: React.ReactNode;
 };
-
 export const style = cva(
   ["text-white"],
   {
@@ -43,7 +41,6 @@ export const style = cva(
     },
   }
 );
-
 export const ${componentName} = ({ children, ...variants }: ${componentName}Props) => {
   return (
     <div className={style(variants)}>

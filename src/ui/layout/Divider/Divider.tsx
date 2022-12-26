@@ -1,15 +1,13 @@
 import type { VariantProps } from "class-variance-authority";
 import { cva } from "class-variance-authority";
 
-type Variants = VariantProps<typeof style>;
-export type DividerProps = Variants & {
+export type DividerProps = VariantProps<typeof style> & {
   children: string | React.ReactNode;
   /**
    * Customize the default `Divider.Content`. Only applicable when `children` is string.
    */
   contentStyle?: VariantProps<typeof contentStyle>;
 };
-
 export const style = cva(["relative flex items-center"], {
   variants: {
     justifyContent: {
@@ -45,6 +43,9 @@ export const Divider = ({
   );
 };
 
+type ContentProps = VariantProps<typeof contentStyle> & {
+  children: React.ReactNode;
+};
 const contentStyle = cva([], {
   variants: {
     size: {
@@ -70,6 +71,6 @@ const contentStyle = cva([], {
     color: "gray",
   },
 });
-Divider.Content = ({ children, ...variants }) => {
+Divider.Content = ({ children, ...variants }: ContentProps) => {
   return <span className={contentStyle(variants)}>{children}</span>;
 };

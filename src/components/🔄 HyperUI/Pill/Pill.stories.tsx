@@ -2,7 +2,7 @@ import { story } from "@storybook-util";
 import { userFactory } from "@test/factories";
 
 import { Spacer } from "@/ui/layout";
-import { Callout } from "@/ui/template";
+import { Callout } from "@/ui/templates";
 
 import { Pill } from "./Pill";
 
