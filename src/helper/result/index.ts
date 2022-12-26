@@ -7,7 +7,7 @@ export type { Ok, Result } from "./types";
  * and the corresponding data.
  */
 export const ok = <TOk>(result: TOk): Ok<TOk> => ({
-  ok: true as const,
+  ok: true,
   ...result
 })
 
@@ -22,7 +22,7 @@ export const defineErrors = <
   errorMap: TErrorMap
 ): ErrorFunc<TErrorMap> => {
   return (kind, ctx?: string) => ({
-    ok: false as const,
+    ok: false,
     error: {
       kind: kind,
       message: errorMap[kind],
