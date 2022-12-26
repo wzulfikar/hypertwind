@@ -3,30 +3,43 @@ import { cva } from "class-variance-authority";
 
 type Variants = VariantProps<typeof style>;
 export type DividerProps = Variants & {
-  children: React.ReactNode;
+  children: string | React.ReactNode;
+  /**
+   * Customize the default `Divider.Content`. Only applicable when `children` is string.
+   */
   contentStyle?: VariantProps<typeof contentStyle>;
 };
 
-export const style = cva(["relative flex"], {
+export const style = cva(["relative flex items-center"], {
   variants: {
     justifyContent: {
       start: "justify-start",
       center: "justify-center",
       end: "justify-end",
+      // Useful when you have multiple components as children and want to separate them
+      between: "justify-between",
     },
   },
   defaultVariants: {
     justifyContent: "center",
   },
 });
-export const Divider = ({ children, ...variants }: DividerProps) => {
+export const Divider = ({
+  children,
+  contentStyle,
+  ...variants
+}: DividerProps) => {
   return (
     <div className="relative">
       <div className="absolute inset-0 flex items-center" aria-hidden="true">
         <div className="w-full border-t border-gray-300" />
       </div>
       <div className={style(variants)}>
-        <Divider.Content {...contentStyle}>{children}</Divider.Content>
+        {typeof children == "string" ? (
+          <Divider.Content {...contentStyle}>{children}</Divider.Content>
+        ) : (
+          children
+        )}
       </div>
     </div>
   );
