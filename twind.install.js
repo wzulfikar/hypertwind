@@ -9,7 +9,7 @@ addEventListener('warning', (event) => {
   const warning = event.detail
 
   // Skip warnings for css classes from Storybook
-  if (warning.code === "TWIND_INVALID_CLASS" && warning.detail.match(/(dark)|(sb-.+)|(_.+)/)) {
+  if (warning.code === "TWIND_INVALID_CLASS" && warning.detail.match(/(dark)|(sb-.+)|(sbdocs-.+)|(css-.+)|(os-.+)|(_.+)/)) {
     return
   }
 

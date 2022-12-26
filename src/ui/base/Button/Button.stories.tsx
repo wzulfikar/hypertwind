@@ -1,12 +1,9 @@
-import { story, ComponentStory } from "@storybook-util";
+import { ComponentStory, story } from "@storybook-util";
 
 import { Button } from "./Button";
 
 export default {
-  ...story(Button, { path: "ui/design" }),
-  argTypes: {
-    rounded: { control: "boolean" },
-  },
+  ...story(Button, { path: "ui/base" }),
   args: {
     _label: "Button",
   },
@@ -20,4 +17,4 @@ export const Primary = Template.bind({});
 Primary.args = { intent: "primary" };
 
 export const Rounded = Template.bind({});
-Rounded.args = { intent: "primary", rounded: true };
+Rounded.args = { intent: "primary", rounded: "full" };

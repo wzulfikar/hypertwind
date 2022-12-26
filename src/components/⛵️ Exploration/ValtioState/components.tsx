@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 
+import { styles } from "@storybook-util";
+
 import { HStack } from "@/ui/layout/HStack";
 
 import { state, useSnap } from "./state";
@@ -27,10 +29,7 @@ export const Count = () => {
       <div>Count:</div>
       <div>{snap.count}</div>
       <div>
-        <button
-          className="text-xs border border-gray-200 rounded px-1"
-          onClick={() => state.incCount()}
-        >
+        <button className={styles.button} onClick={() => state.incCount()}>
           Increment
         </button>
       </div>
@@ -47,10 +46,7 @@ export const User = () => {
         {snap.user ? `#${snap.user.id} ${snap.user.name}` : "(no user)"}
       </div>
       <div>
-        <button
-          className="text-xs border border-gray-200 rounded px-1"
-          onClick={() => state.fetchUser()}
-        >
+        <button className={styles.button} onClick={() => state.fetchUser()}>
           {snap.isFetching ? "Fetching.." : "Fetch user"}
         </button>
       </div>

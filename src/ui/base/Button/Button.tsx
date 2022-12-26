@@ -9,20 +9,32 @@ export type ButtonProps = Variants & {
 
 export const style = cva(
   [
-    "rounded font-medium shadow-sm text-white",
+    "rounded font-medium shadow-sm",
     "items-center inline-flex",
-    "border border-transparent",
+    "border",
     "focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2",
   ],
   {
     variants: {
       intent: {
-        secondary: "bg-indigo-100 hover:bg-indigo-200",
-        primary: "bg-indigo-600 hover:bg-indigo-700",
-        accent: "bg-yellow-600 hover:bg-yellow-700",
+        secondary: [
+          "border-transparent",
+          "bg-indigo-100 hover:bg-indigo-200",
+          "text-indigo-700",
+        ],
+        primary: [
+          "border-transparent",
+          "bg-indigo-600 hover:bg-indigo-700",
+          "text-white",
+        ],
+        accent: ["border-transparent", "bg-yellow-600 hover:bg-yellow-700"],
+        white: ["border-gray-300", "bg-white text-gray-700 hover:bg-gray-50"],
       },
       rounded: {
-        true: "rounded-full",
+        none: "rounded-none",
+        default: "rounded",
+        sm: "rounded-sm",
+        full: "rounded-full",
       },
       size: {
         sm: ["px-2.5 py-1.5", "text-xs"],
@@ -34,6 +46,7 @@ export const style = cva(
     defaultVariants: {
       intent: "primary",
       size: "md",
+      rounded: "default",
     },
   }
 );

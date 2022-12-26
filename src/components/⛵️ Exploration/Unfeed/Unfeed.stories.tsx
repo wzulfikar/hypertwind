@@ -1,6 +1,7 @@
-import { ComponentStory } from "@storybook/react";
 import { story } from "@storybook-util";
-import { style as button } from "@/ui/design/Button";
+import { ComponentStory } from "@storybook/react";
+
+import { style as button } from "@/ui/base/Button";
 
 import { Unfeed, defaultSrc } from "./Unfeed";
 
