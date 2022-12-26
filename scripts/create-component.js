@@ -78,6 +78,9 @@ const Template: ComponentStory<typeof ${componentName}> = (args) => (
   <${componentName} {...args}>{args._label}</${componentName}>
 );
 
+export const NoProps = Template.bind({});
+NoProps.args = { };
+
 export const Basic = Template.bind({});
 Basic.args = { intent: "basic" };
 `,
