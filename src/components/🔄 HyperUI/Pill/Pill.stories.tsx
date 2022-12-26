@@ -1,7 +1,8 @@
 import { story } from "@storybook-util";
-import { Callout } from "@/ui/interface";
-import { Spacer } from "@/ui/layout";
 import { userFactory } from "@test/factories";
+
+import { Spacer } from "@/ui/layout";
+import { Callout } from "@/ui/template";
 
 import { Pill } from "./Pill";
 
