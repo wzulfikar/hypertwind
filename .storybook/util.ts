@@ -54,3 +54,10 @@ export const story = (component: React.FC<any>, { docs = '', path = "components"
     },
   }
 }
+
+/**
+ * Styles for common elements
+ */
+export const styles = {
+  button: "text-xs border border-gray-200 rounded px-1"
+}

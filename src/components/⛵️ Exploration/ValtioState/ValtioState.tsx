@@ -1,3 +1,4 @@
+import { styles } from "@storybook-util";
 import type { VariantProps } from "class-variance-authority";
 import { cva } from "class-variance-authority";
 
@@ -37,7 +38,9 @@ export const ValtioState = ({ children, ...variants }: ValtioStateProps) => {
         <Time />
         <Count />
         <User />
-        <button onClick={() => state.reset()}>Reset</button>
+        <button className={styles.button} onClick={() => state.reset()}>
+          Reset
+        </button>
       </div>
     </div>
   );
