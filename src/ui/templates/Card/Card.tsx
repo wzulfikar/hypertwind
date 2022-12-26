@@ -22,12 +22,12 @@ export const Card = ({ children, ...variants }: CardProps) => {
   );
 };
 
-Card.Header = ({ children }) => {
+Card.Header = ({ children }: React.PropsWithChildren) => {
   return <div className="px-4 py-5 sm:px-6">{children}</div>;
 };
-Card.Content = ({ children }) => {
+Card.Content = ({ children }: React.PropsWithChildren) => {
   return <div className="px-4 py-5 sm:p-6">{children}</div>;
 };
-Card.Footer = ({ children }) => {
+Card.Footer = ({ children }: React.PropsWithChildren) => {
   return <div className="px-4 py-4 sm:px-6">{children}</div>;
 };
