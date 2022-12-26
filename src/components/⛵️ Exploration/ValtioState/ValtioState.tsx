@@ -34,7 +34,7 @@ export const ValtioState = ({ children, ...variants }: ValtioStateProps) => {
   return (
     <div className={style(variants)}>
       {children}
-      <div className="max-w-sm">
+      <div className="max-w-sm p-2">
         <Time />
         <Count />
         <User />
