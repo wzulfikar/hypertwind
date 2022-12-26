@@ -1,7 +1,7 @@
 import { ComponentStory, story } from "@storybook-util";
 import { HiPaperClip, HiPencil, HiPlus, HiTrash } from "react-icons/hi";
 
-import { ButtonGroup } from "@/ui/base/ButtonGroup";
+import { ButtonGroup } from "@/ui/templates/ButtonGroup";
 
 import { Divider } from "./Divider";
 
